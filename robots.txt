@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://texasappliancesrepair.com/sitemap.xml
+Sitemap: https://www.texasappliancesrepair.com/sitemap.xml
