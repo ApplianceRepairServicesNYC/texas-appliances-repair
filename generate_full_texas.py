@@ -284,12 +284,20 @@ def build_texas_nav():
         nav_html += f'                            <div class="county-towns" id="county{counter}">\n'
         for town in towns:
             town_name = format_name(town)
-            nav_html += f'                                <li><a href="/{county_slug}/{town}/">{town_name}</a></li>\n'
+            nav_html += f'                                <li><a href="https://www.texasappliancesrepair.com/{county_slug}/{town}/">{town_name}</a></li>\n'
         nav_html += '                            </div>\n'
         counter += 1
     return nav_html
 
-def generate_page(county_slug, town_slug, appliance_slug, texas_nav):
+def build_towns_list(county_slug, towns):
+    """Build the townsList HTML for footer section."""
+    html = ""
+    for town in towns:
+        town_name = format_name(town)
+        html += f'                                <li><a href="https://www.texasappliancesrepair.com/{county_slug}/{town}/"><h3>{town_name}</h3></a></li>\n'
+    return html
+
+def generate_page(county_slug, town_slug, appliance_slug, texas_nav, towns_list_html):
     county_name = format_name(county_slug)
     town_name = format_name(town_slug)
     appliance_name = format_name(appliance_slug.replace("-repair", ""))
@@ -297,10 +305,15 @@ def generate_page(county_slug, town_slug, appliance_slug, texas_nav):
     html = TEMPLATE
 
     # Replace the NJ service areas navigation with Texas navigation
-    # Find and replace the service-areas-submenu content
-    nj_nav_pattern = r'(<div class="service-areas-submenu" id="serviceAreasSubmenu">).*?(</div>\s*</ul>\s*</div>\s*</div>\s*</header>)'
+    # Find the service-areas-submenu div and replace its contents
+    nj_nav_pattern = r'(<div class="service-areas-submenu" id="serviceAreasSubmenu">).*?(</div>\s*</ul>\s*</div>)'
     texas_nav_replacement = r'\1\n' + texas_nav + r'                        \2'
     html = re.sub(nj_nav_pattern, texas_nav_replacement, html, flags=re.DOTALL)
+
+    # Replace the townsList in footer with current county's towns
+    towns_list_pattern = r'(<ul id="townsList">).*?(</ul>)'
+    towns_list_replacement = r'\1\n' + towns_list_html + r'                            \2'
+    html = re.sub(towns_list_pattern, towns_list_replacement, html, flags=re.DOTALL)
 
     # Replace domain and URLs
     html = html.replace("lgappliancerepairnj.com", "texasappliancesrepair.com")
@@ -372,6 +385,9 @@ def main():
         county_dir = os.path.join(base_dir, county_slug)
         os.makedirs(county_dir, exist_ok=True)
 
+        # Build towns list HTML for this county's footer
+        towns_list_html = build_towns_list(county_slug, towns)
+
         for town_slug in towns:
             town_dir = os.path.join(county_dir, town_slug)
             os.makedirs(town_dir, exist_ok=True)
@@ -383,7 +399,7 @@ def main():
                 appl_dir = os.path.join(town_dir, appliance)
                 os.makedirs(appl_dir, exist_ok=True)
 
-                html = generate_page(county_slug, town_slug, appliance, texas_nav)
+                html = generate_page(county_slug, town_slug, appliance, texas_nav, towns_list_html)
 
                 with open(os.path.join(appl_dir, "index.html"), "w") as f:
                     f.write(html)
