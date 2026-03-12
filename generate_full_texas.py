@@ -369,6 +369,9 @@ def generate_page(county_slug, town_slug, appliance_slug, texas_nav, towns_list_
     # Update logo reference
     html = html.replace('/assets/images/lg-logo.png', '/assets/images/logo.png')
 
+    # Make hero image 20% more visible (reduce overlay from 78% to 58%)
+    html = html.replace('rgba(0, 0, 0, 0.78)', 'rgba(0, 0, 0, 0.58)')
+
     return html
 
 def main():
@@ -421,6 +424,31 @@ def main():
     # Update robots.txt with https www
     with open(os.path.join(base_dir, "robots.txt"), "w") as f:
         f.write("User-agent: *\nAllow: /\n\nSitemap: https://www.texasappliancesrepair.com/sitemap.xml\n")
+
+    # Update homepage navigation
+    print("Updating homepage navigation...")
+    homepage_path = os.path.join(base_dir, "index.html")
+    with open(homepage_path, 'r') as f:
+        homepage = f.read()
+
+    # Replace header navigation
+    nj_nav_pattern = r'(<div class="service-areas-submenu" id="serviceAreasSubmenu">).*?(</div>\s*</ul>\s*</div>)'
+    texas_nav_replacement = r'\1\n' + texas_nav + r'                        \2'
+    homepage = re.sub(nj_nav_pattern, texas_nav_replacement, homepage, flags=re.DOTALL)
+
+    # Build county list for footer (all counties)
+    county_list_html = ""
+    for county_slug in sorted(TEXAS_COUNTIES.keys()):
+        county_name = format_name(county_slug)
+        county_list_html += f'                                <li><a href="https://www.texasappliancesrepair.com/{county_slug}/"><h3>{county_name}</h3></a></li>\n'
+
+    # Replace footer county list
+    county_list_pattern = r'(<ul id="townsList">).*?(</ul>)'
+    county_list_replacement = r'\1\n' + county_list_html + r'                            \2'
+    homepage = re.sub(county_list_pattern, county_list_replacement, homepage, flags=re.DOTALL)
+
+    with open(homepage_path, 'w') as f:
+        f.write(homepage)
 
     print(f"\nTotal: {len(TEXAS_COUNTIES)} counties, {total} service pages")
     print(f"Sitemap: {len(sitemap_urls)} URLs")
