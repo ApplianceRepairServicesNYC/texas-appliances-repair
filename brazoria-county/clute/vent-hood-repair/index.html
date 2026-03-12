@@ -5,22 +5,27 @@
     <link rel="preload" as="image" href="/assets/images/appliances/hero-appliances.webp" fetchpriority="high">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vent Hood Repair in Clute, TX</title>
-    <meta name="description" content="Professional appliance repair in Clute, Brazoria County, TX. Same-day service, genuine parts, trained technicians. Call now for fast appliance repair.">
-    <meta name="keywords" content="appliance repair Clute, washer repair Brazoria County, dryer repair, refrigerator repair, dishwasher repair, oven repair, microwave repair, same day appliance repair Texas">
-    <meta name="author" content="Texas Appliances Repair">
+    <meta name="description" content="Professional vent hood repair in Clute, Brazoria County, TX. Same-day service, genuine parts, trained technicians. Call now for fast vent hood repair.">
+    <meta name="keywords" content="appliance repair Brazoria County, washer repair TX, dryer repair, refrigerator repair, dishwasher repair, oven repair, microwave repair, same day repair Brazoria County">
+    <meta name="author" content="Texas Appliances Repair Brazoria County TX">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://texasappliancesrepair.com/brazoria-county/clute/vent-hood-repair/">
-    <link rel="sitemap" href="https://texasappliancesrepair.com/sitemap.xml">
-    <meta property="og:title" content="Vent Hood Repair in Clute, TX">
+    <link rel="sitemap" href="/sitemap.xml">
+    <meta property="og:title" content="Vent Hood Repair Clute TX">
     <meta property="og:description" content="Fast, reliable appliance repair in Brazoria County TX. Same-day repair for washers, dryers, ovens, refrigerators & more.">
+    <meta property="og:image" content="/assets/img/lg-repair-bergen.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="675">
+    <meta property="og:image:alt" content="Texas Appliances Repair in Brazoria County TX">
     <meta property="og:url" content="https://texasappliancesrepair.com/brazoria-county/clute/vent-hood-repair/">
     <meta property="og:type" content="website">
-    <link rel="icon" type="image/png" href="https://texasappliancesrepair.com/favicon.png?v=1" sizes="180x180">
-    <link rel="apple-touch-icon" href="https://texasappliancesrepair.com/favicon.png?v=1">
+    <link rel="icon" type="image/png" href="/favicon.png?v=1" sizes="180x180">
+    <link rel="apple-touch-icon" href="/favicon.png?v=1">
+    <link rel="shortcut icon" href="/favicon.png?v=1">
 <style>
         :root {
-            --blue: #1e3a5f;
-            --red: #c41e3a;
+            --blue: #003087;
+            --red: #e41e26;
             --gray: #f8f9fa;
         }
         body {
@@ -29,8 +34,12 @@
             color: #333;
             background: #fff;
             line-height: 1.6;
+            box-sizing: border-box;
+            overscroll-behavior: none;
         }
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             font-weight: 700;
             color: var(--blue);
@@ -39,6 +48,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            box-sizing: border-box;
         }
         header {
             background: var(--blue);
@@ -49,17 +59,48 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-link img {
+            height: 45px;
+            width: auto;
+        }
+        .logo-link:hover {
+            opacity: 0.9;
         }
         .nav-wrapper {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
+        .nav-right {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .services-menu {
+            position: relative;
+        }
+        .services-btn {
             color: white;
-            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 12px 20px;
+            border-radius: 6px;
+            transition: all .3s;
+            background: rgba(255, 255, 255, 0.1);
+            white-space: nowrap;
+            box-sizing: border-box;
+        }
+        .services-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
         .nav-call-btn {
             background: var(--red);
@@ -70,200 +111,1557 @@
             text-decoration: none;
             font-size: 17px;
             transition: all .3s;
+            cursor: pointer;
+            box-sizing: border-box;
+            border: none;
         }
         .nav-call-btn:hover {
-            background: #a01830;
+            background: #c41b20;
             transform: translateY(-2px);
         }
-        .hero {
-            background: linear-gradient(rgba(30, 58, 95, 0.9), rgba(30, 58, 95, 0.9)), url('/assets/images/appliances/hero-appliances.webp');
-            background-size: cover;
-            background-position: center;
+        .services-dropdown {
+            display: none;
+            position: fixed;
+            top: 80px;
+            width: 420px;
+            min-width: 360px;
+            max-width: 95%;
+            min-height: 100px;
+            background: var(--blue);
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            padding: 32px 0;
+            z-index: 1000;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-sizing: border-box;
+            overflow-wrap: break-word;
+            white-space: nowrap;
+            overscroll-behavior: contain;
+        }
+        .services-menu.active .services-dropdown {
+            display: block;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            .services-menu:hover .services-dropdown {
+                display: block;
+            }
+        }
+        #servicesMenu .services-dropdown {
+            right: 20px;
+        }
+        
+        .dropdown-close-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
             color: white;
-            padding: 160px 0 80px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all .3s;
+            z-index: 10;
+        }
+        .dropdown-close-btn:hover {
+            background: var(--red);
+            transform: rotate(90deg);
+        }
+        
+        @media (max-width: 768px) {
+            .services-dropdown {
+                width: 95%;
+                max-width: 420px;
+                min-width: 320px;
+                right: auto;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 80px;
+            }
+            .nav-wrapper {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            .logo-link {
+                margin-bottom: 10px;
+            }
+            .nav-right {
+                width: 100%;
+                justify-content: center;
+                gap: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .services-dropdown {
+                width: 95%;
+                max-width: 380px;
+                min-width: 300px;
+            }
+        }
+        .services-dropdown li {
+            padding: 22px 36px;
+            margin: 14px 0;
+            color: #eee;
+            font-size: 18px;
+            line-height: 2.3;
+            transition: all .3s;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+        .services-dropdown li:hover {
+            background: var(--red);
+            color: white;
+            padding-left: 46px;
+        }
+        .services-dropdown a {
+            color: #eee;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .services-dropdown li:hover a {
+            color: white;
+        }
+        .submenu-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.15);
+            margin: 14px 20px;
+            border-radius: 8px;
+            padding: 22px 24px;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+        .submenu-toggle:after {
+            content: "›";
+            transition: transform .3s;
+            font-size: 18px;
+        }
+        .submenu-toggle:hover:after {
+            transform: rotate(90deg);
+        }
+        .additional-submenu,
+        .service-areas-submenu {
+            max-height: 0;
+            overflow-y: auto;
+            transition: max-height 0.8s ease;
+            background: rgba(0, 0, 0, 0.2);
+            margin: 0 20px 14px;
+            border-radius: 8px;
+            box-sizing: border-box;
+            white-space: normal;
+            -webkit-overflow-scrolling: touch;
+        }
+        .additional-submenu li,
+        .service-areas-submenu li {
+            padding: 20px 44px;
+            color: #eee;
+            font-size: 17px;
+            line-height: 2.1;
+            margin: 12px 0;
+            transition: all .3s;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+        .additional-submenu li:hover,
+        .additional-submenu li:active,
+        .service-areas-submenu li:hover,
+        .service-areas-submenu li:active {
+            background: var(--red);
+            color: white;
+            padding-left: 54px;
+        }
+        .service-areas-submenu li a {
+            color: #eee;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+            transition: all .3s;
+            cursor: pointer;
+            pointer-events: auto;
+        }
+        .service-areas-submenu li:hover a,
+        .service-areas-submenu li:active a {
+            color: white;
+        }
+        .hero {
+            position: relative;
+            color: white;
             text-align: center;
+            padding: 160px 20px 120px;
+            margin-top: 80px;
+            background: linear-gradient(rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.78)), url('/assets/images/appliances/hero-appliances.webp') center center/cover no-repeat;
+            background-attachment: scroll;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
         }
         .hero h1 {
-            font-size: 48px;
+            font-size: 52px;
+            margin-bottom: 16px;
+            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
+            line-height: 1.2;
             color: white;
-            margin-bottom: 20px;
         }
         .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
+            font-size: 24px;
+            max-width: 900px;
+            margin: 0 auto 35px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
         }
         .btn {
             background: var(--red);
             color: white;
-            padding: 15px 35px;
-            border-radius: 6px;
+            padding: 16px 40px;
+            border-radius: 8px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 18px;
+            display: inline-block;
+            font-size: 20px;
+            transition: all .3s;
+            box-sizing: border-box;
             border: none;
             cursor: pointer;
-            transition: all .3s;
         }
         .btn:hover {
-            background: #a01830;
-            transform: translateY(-2px);
+            background: #c41b20;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(228, 30, 38, 0.5);
+        }
+        @media (max-width: 768px) {
+            .hero {
+                padding: 160px 15px 90px;
+                min-height: 55vh;
+                background-position: center center;
+                background-size: cover;
+            }
+            .hero h1 {
+                font-size: 32px;
+                line-height: 1.3;
+            }
+            .hero p {
+                font-size: 18px;
+                padding: 0 10px;
+            }
+            .btn {
+                padding: 14px 30px;
+                font-size: 18px;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero {
+                padding: 150px 15px 60px;
+                min-height: 50vh;
+            }
+            .hero h1 {
+                font-size: 26px;
+                line-height: 1.3;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            .btn {
+                padding: 12px 24px;
+                font-size: 16px;
+            }
         }
         section {
-            padding: 60px 0;
+            padding: 90px 0;
+            box-sizing: border-box;
         }
         .alt {
             background: var(--gray);
         }
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            margin-top: 40px;
         }
         .service {
+            height: 100%;
             background: white;
-            padding: 30px;
+            padding: 40px 35px;
             border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            transition: transform .3s, box-shadow .3s;
+            transition: all .4s ease;
+            position: relative;
+            cursor: pointer;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            min-height: 280px;
+        }
+        .service h3 {
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .service-types {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-types > div[id^="expandable-content-"] {
+            margin-top: auto;
         }
         .service:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        .service-icon {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--blue);
+            transition: color .3s;
         }
         .service-icon img {
             max-height: 80px;
             width: auto;
+            object-fit: contain;
+            filter: brightness(1.15);
+            mix-blend-mode: multiply;
         }
-        .service h3 {
-            margin-top: 15px;
-            font-size: 18px;
+        .service:hover .service-icon {
+            color: var(--red);
         }
-        .expandable-content {
-            max-height: 150px;
-            overflow: hidden;
-            transition: max-height 0.4s ease;
-        }
-        .expandable-content.expanded {
-            max-height: 2000px;
-        }
-        .expand-btn {
-            background: none;
-            border: none;
-            color: var(--blue);
-            font-weight: 600;
-            cursor: pointer;
-            padding: 10px 20px;
-            font-size: 16px;
-        }
-        footer {
-            background: var(--blue);
-            color: white;
-            padding: 40px 0 20px;
-            text-align: center;
-        }
-        footer a {
-            color: white;
-        }
-        .nearby-towns {
-            margin-top: 40px;
+        .service-types {
+            margin-top: 20px;
             padding: 20px;
-            background: rgba(30, 58, 95, 0.05);
-            border-radius: 12px;
+            background: rgba(0, 48, 135, 0.05);
+            border-radius: 10px;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+            box-sizing: border-box;
         }
-        .nearby-towns ul {
+        .service.active .service-types {
+            max-height: 2000px;
+            overflow: visible;
+            opacity: 1;
+        }
+        .service-types h4 {
+            margin: 0 0 15px;
+            color: var(--blue);
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .service-types ul {
             list-style: none;
             padding: 0;
+            margin: 0;
+        }
+        .service-types li {
+            padding: 12px 20px;
+            margin: 6px 0;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            transition: background .3s, color .3s;
+            color: #333;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+        .service-types li:hover,
+        .service-types li:active {
+            background: var(--red);
+            color: white;
+        }
+        #sa-service-areas {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: transparent;
+            border: 2px solid #808080;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .2);
+            margin: 0 auto 3rem;
+            padding: 20px;
+            position: relative;
+            box-sizing: border-box;
+        }
+        #sa-service-areas h2 {
+            font-size: 34px;
+            text-align: center;
+            color: inherit;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+            transition: transform .3s, color .3s;
+        }
+        #sa-service-areas p {
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+        }
+        .sa-dropdown-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sa-dropdown-button {
+            padding: 14px 32px;
+            border: none;
+            background: linear-gradient(45deg, #003087, #0052cc);
+            color: #fff;
+            font-weight: 600;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all .3s;
+            box-shadow: 0 4px 15px rgba(0, 48, 135, .4);
+            box-sizing: border-box;
+        }
+        .sa-dropdown-button:hover {
+            background: linear-gradient(45deg, #002266, #003f99);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 48, 135, .6);
+        }
+        .sa-dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .5s;
+            background: transparent;
+            box-sizing: border-box;
+        }
+        .sa-slide ul {
+            background: rgba(255, 255, 255, .95);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
+            transition: transform .3s;
+            box-sizing: border-box;
+            list-style: none;
+            margin: 0;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;
+            
+        }
+        .sa-slide ul li {
+            min-height: 50px;
             display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            margin: 8px 0;
+            border-radius: 10px;
+            background: rgba(240, 244, 255, .9);
+            transition: all .3s;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+            box-sizing: border-box;
+        }
+        .sa-slide ul li:hover {
+            background: #d4e4ff;
+            transform: scale(1.03);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+        }
+        .sa-slide ul li h3 {
+            margin: 0;
+            font-size: 17px;
+            color: #1e3c72;
+            font-weight: 600;
+        }
+        #cf-schedule-container {
+            background: transparent;
+            border: 2px solid #808080;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .2);
+            padding: 20px;
+            margin: 3rem auto 0;
+            max-width: 1200px;
+            box-sizing: border-box;
+        }
+        .cf-schedule-text {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-size: 1.5rem;
+            color: #2A2A2A;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .cf-book-button {
+            display: block;
+            padding: 12px 20px;
+            background: linear-gradient(45deg, #003087, #00205B);
+            color: #fff;
+            font-weight: 600;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            margin: 10px auto;
+            width: 100%;
+            max-width: 220px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .3s;
+            box-sizing: border-box;
+        }
+        .cf-book-button:hover {
+            background: linear-gradient(45deg, #00205B, #001A45);
+            transform: translateY(-3px);
+        }
+        .form-call-now {
+            display: block;
+            padding: 12px 28px;
+            background: var(--red);
+            color: white;
+            font-weight: 700;
+            border-radius: 6px;
+            font-size: 17px;
+            cursor: pointer;
+            margin: 15px auto 0;
+            width: 100%;
+            max-width: 220px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .3s;
+            box-sizing: border-box;
+            border: none;
+        }
+        .form-call-now:hover {
+            background: #c41b20;
+            transform: translateY(-3px);
+        }
+        .cf-contact-form-section {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all .6s ease;
+            padding: 0;
+            background: linear-gradient(135deg, #003087 0%, #00205B 50%, #001A45 100%);
+            border-radius: 12px;
+            margin-top: 15px;
+            box-sizing: border-box;
+        }
+        .cf-contact-form-section.active {
+            max-height: 1600px;
+            opacity: 1;
+            padding: 20px;
+        }
+        .expect-text {
+            font-size: .95rem;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .cf-contact-form {
+            background: rgba(255, 255, 255, .95);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            box-sizing: border-box;
+        }
+        .cf-form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .cf-form-group label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 5px;
+        }
+        .cf-form-group input,
+        .cf-form-group textarea {
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: #fff;
+            box-sizing: border-box;
+        }
+        .cf-form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .cf-form-button {
+            background: linear-gradient(45deg, #003087, #00205B);
+            color: #fff;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 220px;
+            height: 60px;
+            margin: 20px auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .3s;
+            box-sizing: border-box;
+        }
+        .cf-form-button:hover {
+            background: linear-gradient(45deg, #00205B, #001A45);
+            transform: translateY(-3px);
+        }
+        .cf-success-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+        .cf-success-modal.active {
+            display: flex;
+        }
+        .cf-success-content {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 90%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-sizing: border-box;
+        }
+        .cf-success-content p {
+            font-size: 20px;
+            font-weight: 600;
+            color: #003087;
+            margin: 0 0 25px;
+            line-height: 1.6;
+        }
+        .cf-close-modal {
+            background: var(--red);
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+        .cf-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1999;
+        }
+        .cf-modal-overlay.active {
+            display: block;
+        }
+        footer {
+            background: #1a1a1a;
+            color: #b0b0b0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .footer-main {
+            background: #1a1a1a;
+            padding: 60px 0 40px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-column h3 {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column p {
+            margin: 8px 0;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-column ul li {
+            margin: 12px 0;
+        }
+        
+        .footer-column ul li a {
+            color: #b0b0b0;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color .3s;
+            display: inline-block;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--red);
+            padding-left: 5px;
+        }
+        
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .footer-brand h2 {
+            color: #fff;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .footer-hours {
+            background: rgba(0, 48, 135, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid var(--blue);
+        }
+        
+        .footer-hours p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        
+        .footer-hours strong {
+            color: #fff;
+        }
+        
+        .footer-bottom {
+            background: #0d0d0d;
+            padding: 25px 0;
+        }
+        
+        .footer-bottom-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-bottom p {
+            margin: 8px 0;
+            font-size: 13px;
+            color: #888;
+            text-align: center;
+        }
+        
+        .footer-bottom-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 0 20px 0;
             flex-wrap: wrap;
             gap: 15px;
-            justify-content: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #222;
         }
-        .nearby-towns li a {
-            color: var(--blue);
+        
+        .footer-bottom-links a {
+            color: #b0b0b0;
             text-decoration: none;
-            padding: 8px 16px;
-            background: white;
-            border-radius: 6px;
-            display: block;
-            transition: background .3s;
+            font-size: 14px;
+            transition: color .3s;
+            white-space: nowrap;
         }
-        .nearby-towns li a:hover {
-            background: var(--gray);
+        
+        .footer-bottom-links a:hover {
+            color: var(--blue);
         }
+        
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+            
+            .footer-bottom-links {
+                justify-content: center;
+                gap: 20px 30px;
+            }
+            
+            .sa-slide ul {
+                display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;
+            }
+        }
+        
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 32px;
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
             }
-            .nav-wrapper {
-                flex-direction: column;
-                gap: 15px;
+            
+            .footer-main {
+                padding: 40px 0 30px;
+            }
+            
+            .footer-column {
+                text-align: center;
+            }
+            
+            .footer-brand {
+                align-items: center;
+            }
+            
+            .footer-bottom-links {
+                gap: 15px 25px;
+            }
+            
+            .sa-slide ul {
+                display: grid; grid-template-columns: 1fr; gap: 15px;
+            }
+            
+            .sa-slide ul li {
+                min-height: 60px;
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .sa-slide ul li h3 {
+                text-align: center;
+                width: 100%;
             }
         }
-</style>
+        
+        @media (max-width: 480px) {
+            .footer-bottom-links {
+                flex-direction: column;
+                gap: 12px;
+                padding: 15px 0;
+            }
+            
+            .footer-bottom-links a {
+                font-size: 13px;
+            }
+        }
+    
+        .county-item {
+            cursor: pointer;
+            font-weight: 600 !important;
+            background: rgba(0,48,135,0.3) !important;
+            display: block !important;
+        }
+        .county-item:hover {
+            background: var(--red) !important;
+        }
+        .county-towns {
+            display: none;
+            background: rgba(0, 0, 0, 0.35);
+            margin: 0;
+            padding: 0;
+            border-radius: 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+            max-height: 60vh;
+        }
+        .county-towns.open {
+            display: block;
+        }
+        .county-towns li {
+            padding: 0 !important;
+            font-size: 14px !important;
+            margin: 0 !important;
+            line-height: 1.4 !important;
+            background: transparent !important;
+        }
+        .county-towns li a {
+            display: block;
+            padding: 12px 35px;
+            color: #bbb !important;
+            text-decoration: none;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+        }
+        .county-towns li:hover {
+            background: var(--red) !important;
+        }
+        .county-towns li:hover a {
+            color: white !important;
+        }
+        .service-areas-submenu > li.county-item {
+            padding: 15px 30px !important;
+            margin: 5px 10px !important;
+            border-radius: 6px;
+        }
+/* Modal System */
+.modal-overlay {
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7); z-index: 9998; opacity: 0; transition: opacity 0.3s;
+}
+.modal-overlay.active { display: block; opacity: 1; }
+.modal-card {
+    display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background: white; border-radius: 15px; z-index: 9999; max-width: 800px; width: 90%;
+    max-height: 80vh; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+}
+.modal-card.active { display: flex; flex-direction: column; }
+.modal-header {
+    background: var(--blue); color: white; padding: 20px 30px;
+    display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;
+}
+.modal-header h2 { margin: 0; font-size: 24px; color: white; }
+.modal-close {
+    background: rgba(255,255,255,0.2); border: none; color: white; width: 40px; height: 40px;
+    border-radius: 50%; font-size: 24px; cursor: pointer; transition: all 0.3s;
+}
+.modal-close:hover { background: var(--red); transform: rotate(90deg); }
+.modal-content {
+    padding: 30px; padding-bottom: 40px; overflow-y: auto; flex: 1; line-height: 1.8;
+}
+.modal-content h3 { color: var(--blue); margin: 25px 0 15px; font-size: 18px; }
+.modal-content p { margin: 0 0 15px; color: #444; }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="nav-wrapper">
-                <a href="/" class="logo">Texas Appliances Repair</a>
-                <a href="tel:+18005551234" class="nav-call-btn">Call Now</a>
+        <header>
+        <div class="container nav-wrapper">
+            <a href="/" class="logo-link" aria-label="Return to Texas Appliances Repair Texas Homepage">
+                <img src="/assets/images/logo.png" alt="Texas Appliances Repair Texas" width="73" height="50">
+            </a>
+            <div class="nav-right">
+                <div class="services-menu" id="servicesMenu">
+                    <div class="services-btn" id="servicesToggle">Services</div>
+                    <ul class="services-dropdown" id="servicesDropdown">
+                        <button class="dropdown-close-btn" id="dropdownCloseBtn" aria-label="Close Services Menu">×</button>
+                        <li><a href="/appliances/washer-repair/" aria-label="Washer Repair">Washer Repair</a></li>
+                        <li><a href="/appliances/dryer-repair/" aria-label="Dryer Repair">Dryer Repair</a></li>
+                        <li><a href="/appliances/refrigerator-repair/" aria-label="Refrigerator Repair">Refrigerator Repair</a></li>
+                        <li><a href="/appliances/dishwasher-repair/" aria-label="Dishwasher Repair">Dishwasher Repair</a></li>
+                        <li><a href="/appliances/oven-repair/" aria-label="Oven & Range Repair">Oven & Range Repair</a></li>
+                        <li><a href="/appliances/cooktop-repair/" aria-label="Cooktop Repair">Cooktop Repair</a></li>
+                        <li><a href="/appliances/microwave-repair/" aria-label="Microwave Repair">Microwave Repair</a></li>
+                        <li><a href="/appliances/wine-cooler-repair/" aria-label="Wine Cooler Repair">Wine Cooler Repair</a></li>
+                        <li><a href="/appliances/installation-maintenance/" aria-label="Installation & Maintenance">Installation & Maintenance</a></li>
+                        <li><a href="/" aria-label="All Appliances Repair">All Appliances</a></li>
+                        <li class="submenu-toggle" id="additionalToggle">Additional Services</li>
+                        <div class="additional-submenu" id="additionalSubmenu">
+                            <li>Installation, Repair & Maintenance</li>
+                            <li>Refrigerator Compressor & Refrigerant Service</li>
+                            <li>Appliance Performance Optimization</li>
+                            <li>Appliance Relocation & Setup Assistance</li>
+                            <li>Smart Appliance Connectivity Support</li>
+                            <li>Professional Deep Cleaning Services</li>
+                            <li>Energy Efficiency Upgrades & Optimization</li>
+                            <li>Noise & Vibration Reduction Services</li>
+                            <li>Commercial & Multi-Unit Appliance Services</li>
+                            <li>Recalls & Safety Compliance</li>
+                            <li>EPA Section 608 Certification</li>
+                            <li>Appliance Warranty & Extended Service Plans</li>
+                        </div>
+                        <li class="submenu-toggle" id="serviceAreasToggle">Service Areas</li>
+                        <div class="service-areas-submenu" id="serviceAreasSubmenu">
+                            <li class="county-item" data-county="county0">Atlantic County ▸</li>
+                            <div class="county-towns" id="county0">
+                                <li><a href="/atlantic-county/absecon/">Absecon</a></li>
+                                <li><a href="/atlantic-county/atlantic-city/">Atlantic City</a></li>
+                                <li><a href="/atlantic-county/brigantine/">Brigantine</a></li>
+                                <li><a href="/atlantic-county/buena/">Buena</a></li>
+                                <li><a href="/atlantic-county/buena-vista-township/">Buena Vista Township</a></li>
+                                <li><a href="/atlantic-county/corbin-city/">Corbin City</a></li>
+                                <li><a href="/atlantic-county/egg-harbor-city/">Egg Harbor City</a></li>
+                                <li><a href="/atlantic-county/egg-harbor-township/">Egg Harbor Township</a></li>
+                                <li><a href="/atlantic-county/estell-manor/">Estell Manor</a></li>
+                                <li><a href="/atlantic-county/folsom/">Folsom</a></li>
+                                <li><a href="/atlantic-county/galloway-township/">Galloway Township</a></li>
+                                <li><a href="/atlantic-county/hamilton-township-atlantic/">Hamilton Township</a></li>
+                                <li><a href="/atlantic-county/hammonton/">Hammonton</a></li>
+                                <li><a href="/atlantic-county/linwood/">Linwood</a></li>
+                                <li><a href="/atlantic-county/longport/">Longport</a></li>
+                                <li><a href="/atlantic-county/margate-city/">Margate City</a></li>
+                                <li><a href="/atlantic-county/mullica-township/">Mullica Township</a></li>
+                                <li><a href="/atlantic-county/northfield/">Northfield</a></li>
+                                <li><a href="/atlantic-county/pleasantville/">Pleasantville</a></li>
+                                <li><a href="/atlantic-county/port-republic/">Port Republic</a></li>
+                                <li><a href="/atlantic-county/somers-point/">Somers Point</a></li>
+                                <li><a href="/atlantic-county/ventnor-city/">Ventnor City</a></li>
+                                <li><a href="/atlantic-county/weymouth-township/">Weymouth Township</a></li>
+                            </div>
+                            <li class="county-item" data-county="county1">Burlington County ▸</li>
+                            <div class="county-towns" id="county1">
+                                <li><a href="/burlington-county/bass-river-township/">Bass River Township</a></li>
+                                <li><a href="/burlington-county/beverly/">Beverly</a></li>
+                                <li><a href="/burlington-county/bordentown/">Bordentown</a></li>
+                                <li><a href="/burlington-county/burlington-city/">Burlington City</a></li>
+                                <li><a href="/burlington-county/burlington-township/">Burlington Township</a></li>
+                                <li><a href="/burlington-county/chesterfield-township/">Chesterfield Township</a></li>
+                                <li><a href="/burlington-county/cinnaminson/">Cinnaminson</a></li>
+                                <li><a href="/burlington-county/delanco/">Delanco</a></li>
+                                <li><a href="/burlington-county/delran/">Delran</a></li>
+                                <li><a href="/burlington-county/eastampton/">Eastampton</a></li>
+                                <li><a href="/burlington-county/edgewater-park/">Edgewater Park</a></li>
+                                <li><a href="/burlington-county/evesham-township/">Evesham Township</a></li>
+                                <li><a href="/burlington-county/fieldsboro/">Fieldsboro</a></li>
+                                <li><a href="/burlington-county/florence-township/">Florence Township</a></li>
+                                <li><a href="/burlington-county/hainesport/">Hainesport</a></li>
+                                <li><a href="/burlington-county/lumberton/">Lumberton</a></li>
+                                <li><a href="/burlington-county/mansfield-township-burlington/">Mansfield Township</a></li>
+                                <li><a href="/burlington-county/maple-shade/">Maple Shade</a></li>
+                                <li><a href="/burlington-county/medford/">Medford</a></li>
+                                <li><a href="/burlington-county/medford-lakes/">Medford Lakes</a></li>
+                                <li><a href="/burlington-county/moorestown/">Moorestown</a></li>
+                                <li><a href="/burlington-county/mount-holly/">Mount Holly</a></li>
+                                <li><a href="/burlington-county/mount-laurel/">Mount Laurel</a></li>
+                                <li><a href="/burlington-county/new-hanover-township/">New Hanover Township</a></li>
+                                <li><a href="/burlington-county/north-hanover-township/">North Hanover Township</a></li>
+                                <li><a href="/burlington-county/palmyra/">Palmyra</a></li>
+                                <li><a href="/burlington-county/pemberton-borough/">Pemberton Borough</a></li>
+                                <li><a href="/burlington-county/pemberton-township/">Pemberton Township</a></li>
+                                <li><a href="/burlington-county/riverside/">Riverside</a></li>
+                                <li><a href="/burlington-county/riverton/">Riverton</a></li>
+                                <li><a href="/burlington-county/shamong/">Shamong</a></li>
+                                <li><a href="/burlington-county/southampton/">Southampton</a></li>
+                                <li><a href="/burlington-county/springfield-township-burlington/">Springfield Township</a></li>
+                                <li><a href="/burlington-county/tabernacle/">Tabernacle</a></li>
+                                <li><a href="/burlington-county/washington-township-burlington/">Washington Township</a></li>
+                                <li><a href="/burlington-county/westampton/">Westampton</a></li>
+                                <li><a href="/burlington-county/willingboro/">Willingboro</a></li>
+                                <li><a href="/burlington-county/woodland-township/">Woodland Township</a></li>
+                                <li><a href="/burlington-county/wrightstown/">Wrightstown</a></li>
+                            </div>
+                            <li class="county-item" data-county="county2">Camden County ▸</li>
+                            <div class="county-towns" id="county2">
+                                <li><a href="/camden-county/audubon/">Audubon</a></li>
+                                <li><a href="/camden-county/audubon-park/">Audubon Park</a></li>
+                                <li><a href="/camden-county/barrington/">Barrington</a></li>
+                                <li><a href="/camden-county/bellmawr/">Bellmawr</a></li>
+                                <li><a href="/camden-county/berlin-borough/">Berlin Borough</a></li>
+                                <li><a href="/camden-county/berlin-township/">Berlin Township</a></li>
+                                <li><a href="/camden-county/brooklawn/">Brooklawn</a></li>
+                                <li><a href="/camden-county/camden/">Camden</a></li>
+                                <li><a href="/camden-county/cherry-hill/">Cherry Hill</a></li>
+                                <li><a href="/camden-county/chesilhurst/">Chesilhurst</a></li>
+                                <li><a href="/camden-county/clementon/">Clementon</a></li>
+                                <li><a href="/camden-county/collingswood/">Collingswood</a></li>
+                                <li><a href="/camden-county/gibbsboro/">Gibbsboro</a></li>
+                                <li><a href="/camden-county/gloucester-city/">Gloucester City</a></li>
+                                <li><a href="/camden-county/haddon-heights/">Haddon Heights</a></li>
+                                <li><a href="/camden-county/haddon-township/">Haddon Township</a></li>
+                                <li><a href="/camden-county/haddonfield/">Haddonfield</a></li>
+                                <li><a href="/camden-county/hi-nella/">Hi-Nella</a></li>
+                                <li><a href="/camden-county/laurel-springs/">Laurel Springs</a></li>
+                                <li><a href="/camden-county/lawnside/">Lawnside</a></li>
+                                <li><a href="/camden-county/lindenwold/">Lindenwold</a></li>
+                                <li><a href="/camden-county/magnolia/">Magnolia</a></li>
+                                <li><a href="/camden-county/merchantville/">Merchantville</a></li>
+                                <li><a href="/camden-county/mount-ephraim/">Mount Ephraim</a></li>
+                                <li><a href="/camden-county/oaklyn/">Oaklyn</a></li>
+                                <li><a href="/camden-county/pennsauken/">Pennsauken</a></li>
+                                <li><a href="/camden-county/pine-hill/">Pine Hill</a></li>
+                                <li><a href="/camden-county/runnemede/">Runnemede</a></li>
+                                <li><a href="/camden-county/somerdale/">Somerdale</a></li>
+                                <li><a href="/camden-county/stratford/">Stratford</a></li>
+                                <li><a href="/camden-county/tavistock/">Tavistock</a></li>
+                                <li><a href="/camden-county/voorhees-township/">Voorhees Township</a></li>
+                                <li><a href="/camden-county/waterford-township/">Waterford Township</a></li>
+                                <li><a href="/camden-county/winslow-township/">Winslow Township</a></li>
+                                <li><a href="/camden-county/woodlynne/">Woodlynne</a></li>
+                            </div>
+                            <li class="county-item" data-county="county3">Cape May County ▸</li>
+                            <div class="county-towns" id="county3">
+                                <li><a href="/cape-may-county/avalon/">Avalon</a></li>
+                                <li><a href="/cape-may-county/cape-may/">Cape May</a></li>
+                                <li><a href="/cape-may-county/cape-may-point/">Cape May Point</a></li>
+                                <li><a href="/cape-may-county/dennis-township/">Dennis Township</a></li>
+                                <li><a href="/cape-may-county/lower-township/">Lower Township</a></li>
+                                <li><a href="/cape-may-county/middle-township/">Middle Township</a></li>
+                                <li><a href="/cape-may-county/north-wildwood/">North Wildwood</a></li>
+                                <li><a href="/cape-may-county/ocean-city/">Ocean City</a></li>
+                                <li><a href="/cape-may-county/sea-isle-city/">Sea Isle City</a></li>
+                                <li><a href="/cape-may-county/stone-harbor/">Stone Harbor</a></li>
+                                <li><a href="/cape-may-county/upper-township/">Upper Township</a></li>
+                                <li><a href="/cape-may-county/west-cape-may/">West Cape May</a></li>
+                                <li><a href="/cape-may-county/wildwood/">Wildwood</a></li>
+                                <li><a href="/cape-may-county/wildwood-crest/">Wildwood Crest</a></li>
+                                <li><a href="/cape-may-county/woodbine/">Woodbine</a></li>
+                            </div>
+                            <li class="county-item" data-county="county4">Cumberland County ▸</li>
+                            <div class="county-towns" id="county4">
+                                <li><a href="/cumberland-county/bridgeton/">Bridgeton</a></li>
+                                <li><a href="/cumberland-county/commercial-township/">Commercial Township</a></li>
+                                <li><a href="/cumberland-county/deerfield-township/">Deerfield Township</a></li>
+                                <li><a href="/cumberland-county/downe-township/">Downe Township</a></li>
+                                <li><a href="/cumberland-county/fairfield-township-cumberland/">Fairfield Township</a></li>
+                                <li><a href="/cumberland-county/greenwich-township-cumberland/">Greenwich Township</a></li>
+                                <li><a href="/cumberland-county/hopewell-township-cumberland/">Hopewell Township</a></li>
+                                <li><a href="/cumberland-county/lawrence-township-cumberland/">Lawrence Township</a></li>
+                                <li><a href="/cumberland-county/maurice-river-township/">Maurice River Township</a></li>
+                                <li><a href="/cumberland-county/millville/">Millville</a></li>
+                                <li><a href="/cumberland-county/shiloh/">Shiloh</a></li>
+                                <li><a href="/cumberland-county/stow-creek-township/">Stow Creek Township</a></li>
+                                <li><a href="/cumberland-county/upper-deerfield-township/">Upper Deerfield Township</a></li>
+                                <li><a href="/cumberland-county/vineland/">Vineland</a></li>
+                            </div>
+                            <li class="county-item" data-county="county5">Essex County ▸</li>
+                            <div class="county-towns" id="county5">
+                                <li><a href="/essex-county/belleville/">Belleville</a></li>
+                                <li><a href="/essex-county/bloomfield/">Bloomfield</a></li>
+                                <li><a href="/essex-county/caldwell/">Caldwell</a></li>
+                                <li><a href="/essex-county/cedar-grove/">Cedar Grove</a></li>
+                                <li><a href="/essex-county/east-orange/">East Orange</a></li>
+                                <li><a href="/essex-county/essex-fells/">Essex Fells</a></li>
+                                <li><a href="/essex-county/fairfield-essex/">Fairfield</a></li>
+                                <li><a href="/essex-county/glen-ridge/">Glen Ridge</a></li>
+                                <li><a href="/essex-county/irvington/">Irvington</a></li>
+                                <li><a href="/essex-county/livingston/">Livingston</a></li>
+                                <li><a href="/essex-county/maplewood/">Maplewood</a></li>
+                                <li><a href="/essex-county/millburn/">Millburn</a></li>
+                                <li><a href="/essex-county/montclair/">Montclair</a></li>
+                                <li><a href="/essex-county/newark/">Newark</a></li>
+                                <li><a href="/essex-county/north-caldwell/">North Caldwell</a></li>
+                                <li><a href="/essex-county/nutley/">Nutley</a></li>
+                                <li><a href="/essex-county/orange/">Orange</a></li>
+                                <li><a href="/essex-county/roseland/">Roseland</a></li>
+                                <li><a href="/essex-county/south-orange/">South Orange</a></li>
+                                <li><a href="/essex-county/verona/">Verona</a></li>
+                                <li><a href="/essex-county/west-caldwell/">West Caldwell</a></li>
+                                <li><a href="/essex-county/west-orange/">West Orange</a></li>
+                            </div>
+                            <li class="county-item" data-county="county6">Gloucester County ▸</li>
+                            <div class="county-towns" id="county6">
+                                <li><a href="/gloucester-county/clayton/">Clayton</a></li>
+                                <li><a href="/gloucester-county/deptford-township/">Deptford Township</a></li>
+                                <li><a href="/gloucester-county/east-greenwich-township/">East Greenwich Township</a></li>
+                                <li><a href="/gloucester-county/elk-township/">Elk Township</a></li>
+                                <li><a href="/gloucester-county/franklin-township-gloucester/">Franklin Township</a></li>
+                                <li><a href="/gloucester-county/glassboro/">Glassboro</a></li>
+                                <li><a href="/gloucester-county/greenwich-township-gloucester/">Greenwich Township</a></li>
+                                <li><a href="/gloucester-county/harrison-township/">Harrison Township</a></li>
+                                <li><a href="/gloucester-county/logan-township/">Logan Township</a></li>
+                                <li><a href="/gloucester-county/mantua-township/">Mantua Township</a></li>
+                                <li><a href="/gloucester-county/monroe-township-gloucester/">Monroe Township</a></li>
+                                <li><a href="/gloucester-county/national-park/">National Park</a></li>
+                                <li><a href="/gloucester-county/newfield/">Newfield</a></li>
+                                <li><a href="/gloucester-county/paulsboro/">Paulsboro</a></li>
+                                <li><a href="/gloucester-county/pitman/">Pitman</a></li>
+                                <li><a href="/gloucester-county/south-harrison-township/">South Harrison Township</a></li>
+                                <li><a href="/gloucester-county/swedesboro/">Swedesboro</a></li>
+                                <li><a href="/gloucester-county/washington-township-gloucester/">Washington Township</a></li>
+                                <li><a href="/gloucester-county/wenonah/">Wenonah</a></li>
+                                <li><a href="/gloucester-county/west-deptford-township/">West Deptford Township</a></li>
+                                <li><a href="/gloucester-county/westville/">Westville</a></li>
+                                <li><a href="/gloucester-county/woodbury/">Woodbury</a></li>
+                                <li><a href="/gloucester-county/woodbury-heights/">Woodbury Heights</a></li>
+                                <li><a href="/gloucester-county/woolwich-township/">Woolwich Township</a></li>
+                            </div>
+                            <li class="county-item" data-county="county7">Hudson County ▸</li>
+                            <div class="county-towns" id="county7">
+                                <li><a href="/hudson-county/bayonne/">Bayonne</a></li>
+                                <li><a href="/hudson-county/east-newark/">East Newark</a></li>
+                                <li><a href="/hudson-county/guttenberg/">Guttenberg</a></li>
+                                <li><a href="/hudson-county/harrison/">Harrison</a></li>
+                                <li><a href="/hudson-county/hoboken/">Hoboken</a></li>
+                                <li><a href="/hudson-county/jersey-city/">Jersey City</a></li>
+                                <li><a href="/hudson-county/kearny/">Kearny</a></li>
+                                <li><a href="/hudson-county/north-bergen/">North Bergen</a></li>
+                                <li><a href="/hudson-county/secaucus/">Secaucus</a></li>
+                                <li><a href="/hudson-county/union-city/">Union City</a></li>
+                                <li><a href="/hudson-county/weehawken/">Weehawken</a></li>
+                                <li><a href="/hudson-county/west-new-york/">West New York</a></li>
+                            </div>
+                            <li class="county-item" data-county="county8">Brazoria County ▸</li>
+                            <div class="county-towns" id="county8">
+                                <li><a href="/brazoria-county/alexandria-township/">Alexandria Township</a></li>
+                                <li><a href="/brazoria-county/bethlehem-township/">Bethlehem Township</a></li>
+                                <li><a href="/brazoria-county/bloomsbury/">Bloomsbury</a></li>
+                                <li><a href="/brazoria-county/califon/">Califon</a></li>
+                                <li><a href="/brazoria-county/clinton-town/">Clinton Town</a></li>
+                                <li><a href="/brazoria-county/clute/">Clute</a></li>
+                                <li><a href="/brazoria-county/delaware-township/">Delaware Township</a></li>
+                                <li><a href="/brazoria-county/east-amwell-township/">East Amwell Township</a></li>
+                                <li><a href="/brazoria-county/flemington/">Flemington</a></li>
+                                <li><a href="/brazoria-county/franklin-township-hunterdon/">Franklin Township</a></li>
+                                <li><a href="/brazoria-county/frenchtown/">Frenchtown</a></li>
+                                <li><a href="/brazoria-county/glen-gardner/">Glen Gardner</a></li>
+                                <li><a href="/brazoria-county/hampton/">Hampton</a></li>
+                                <li><a href="/brazoria-county/high-bridge/">High Bridge</a></li>
+                                <li><a href="/brazoria-county/holland-township/">Holland Township</a></li>
+                                <li><a href="/brazoria-county/kingwood-township/">Kingwood Township</a></li>
+                                <li><a href="/brazoria-county/lambertville/">Lambertville</a></li>
+                                <li><a href="/brazoria-county/lebanon-borough/">Lebanon Borough</a></li>
+                                <li><a href="/brazoria-county/lebanon-township/">Lebanon Township</a></li>
+                                <li><a href="/brazoria-county/milford/">Milford</a></li>
+                                <li><a href="/brazoria-county/raritan-township/">Raritan Township</a></li>
+                                <li><a href="/brazoria-county/readington-township/">Readington Township</a></li>
+                                <li><a href="/brazoria-county/stockton/">Stockton</a></li>
+                                <li><a href="/brazoria-county/tewksbury-township/">Tewksbury Township</a></li>
+                                <li><a href="/brazoria-county/union-township-hunterdon/">Union Township</a></li>
+                                <li><a href="/brazoria-county/west-amwell-township/">West Amwell Township</a></li>
+                            </div>
+                            <li class="county-item" data-county="county9">Mercer County ▸</li>
+                            <div class="county-towns" id="county9">
+                                <li><a href="/mercer-county/east-windsor/">East Windsor</a></li>
+                                <li><a href="/mercer-county/ewing-township/">Ewing Township</a></li>
+                                <li><a href="/mercer-county/hamilton-township-mercer/">Hamilton Township</a></li>
+                                <li><a href="/mercer-county/hightstown/">Hightstown</a></li>
+                                <li><a href="/mercer-county/hopewell-borough/">Hopewell Borough</a></li>
+                                <li><a href="/mercer-county/hopewell-township-mercer/">Hopewell Township</a></li>
+                                <li><a href="/mercer-county/lawrence-township-mercer/">Lawrence Township</a></li>
+                                <li><a href="/mercer-county/pennington/">Pennington</a></li>
+                                <li><a href="/mercer-county/princeton/">Princeton</a></li>
+                                <li><a href="/mercer-county/robbinsville-township/">Robbinsville Township</a></li>
+                                <li><a href="/mercer-county/trenton/">Trenton</a></li>
+                                <li><a href="/mercer-county/west-windsor-township/">West Windsor Township</a></li>
+                            </div>
+                            <li class="county-item" data-county="county10">Middlesex County ▸</li>
+                            <div class="county-towns" id="county10">
+                                <li><a href="/middlesex-county/carteret/">Carteret</a></li>
+                                <li><a href="/middlesex-county/cranbury/">Cranbury</a></li>
+                                <li><a href="/middlesex-county/dunellen/">Dunellen</a></li>
+                                <li><a href="/middlesex-county/east-brunswick/">East Brunswick</a></li>
+                                <li><a href="/middlesex-county/edison/">Edison</a></li>
+                                <li><a href="/middlesex-county/helmetta/">Helmetta</a></li>
+                                <li><a href="/middlesex-county/highland-park/">Highland Park</a></li>
+                                <li><a href="/middlesex-county/jamesburg/">Jamesburg</a></li>
+                                <li><a href="/middlesex-county/metuchen/">Metuchen</a></li>
+                                <li><a href="/middlesex-county/middlesex/">Middlesex</a></li>
+                                <li><a href="/middlesex-county/milltown/">Milltown</a></li>
+                                <li><a href="/middlesex-county/monroe-township-middlesex/">Monroe Township</a></li>
+                                <li><a href="/middlesex-county/new-brunswick/">New Brunswick</a></li>
+                                <li><a href="/middlesex-county/north-brunswick/">North Brunswick</a></li>
+                                <li><a href="/middlesex-county/old-bridge/">Old Bridge</a></li>
+                                <li><a href="/middlesex-county/perth-amboy/">Perth Amboy</a></li>
+                                <li><a href="/middlesex-county/piscataway/">Piscataway</a></li>
+                                <li><a href="/middlesex-county/plainsboro/">Plainsboro</a></li>
+                                <li><a href="/middlesex-county/sayreville/">Sayreville</a></li>
+                                <li><a href="/middlesex-county/south-amboy/">South Amboy</a></li>
+                                <li><a href="/middlesex-county/south-brunswick/">South Brunswick</a></li>
+                                <li><a href="/middlesex-county/south-plainfield/">South Plainfield</a></li>
+                                <li><a href="/middlesex-county/south-river/">South River</a></li>
+                                <li><a href="/middlesex-county/spotswood/">Spotswood</a></li>
+                                <li><a href="/middlesex-county/woodbridge-township/">Woodbridge Township</a></li>
+                            </div>
+                            <li class="county-item" data-county="county11">Monmouth County ▸</li>
+                            <div class="county-towns" id="county11">
+                                <li><a href="/monmouth-county/aberdeen-township/">Aberdeen Township</a></li>
+                                <li><a href="/monmouth-county/allenhurst/">Allenhurst</a></li>
+                                <li><a href="/monmouth-county/allentown/">Allentown</a></li>
+                                <li><a href="/monmouth-county/asbury-park/">Asbury Park</a></li>
+                                <li><a href="/monmouth-county/atlantic-highlands/">Atlantic Highlands</a></li>
+                                <li><a href="/monmouth-county/avon-by-the-sea/">Avon-by-the-Sea</a></li>
+                                <li><a href="/monmouth-county/belmar/">Belmar</a></li>
+                                <li><a href="/monmouth-county/bradley-beach/">Bradley Beach</a></li>
+                                <li><a href="/monmouth-county/brielle/">Brielle</a></li>
+                                <li><a href="/monmouth-county/colts-neck/">Colts Neck</a></li>
+                                <li><a href="/monmouth-county/deal/">Deal</a></li>
+                                <li><a href="/monmouth-county/eatontown/">Eatontown</a></li>
+                                <li><a href="/monmouth-county/englishtown/">Englishtown</a></li>
+                                <li><a href="/monmouth-county/fair-haven/">Fair Haven</a></li>
+                                <li><a href="/monmouth-county/farmingdale/">Farmingdale</a></li>
+                                <li><a href="/monmouth-county/freehold-borough/">Freehold Borough</a></li>
+                                <li><a href="/monmouth-county/freehold-township/">Freehold Township</a></li>
+                                <li><a href="/monmouth-county/hazlet/">Hazlet</a></li>
+                                <li><a href="/monmouth-county/highlands/">Highlands</a></li>
+                                <li><a href="/monmouth-county/holmdel/">Holmdel</a></li>
+                                <li><a href="/monmouth-county/howell/">Howell</a></li>
+                                <li><a href="/monmouth-county/interlaken/">Interlaken</a></li>
+                                <li><a href="/monmouth-county/keansburg/">Keansburg</a></li>
+                                <li><a href="/monmouth-county/keyport/">Keyport</a></li>
+                                <li><a href="/monmouth-county/little-silver/">Little Silver</a></li>
+                                <li><a href="/monmouth-county/loch-arbour/">Loch Arbour</a></li>
+                                <li><a href="/monmouth-county/long-branch/">Long Branch</a></li>
+                                <li><a href="/monmouth-county/manalapan/">Manalapan</a></li>
+                                <li><a href="/monmouth-county/manasquan/">Manasquan</a></li>
+                                <li><a href="/monmouth-county/marlboro/">Marlboro</a></li>
+                                <li><a href="/monmouth-county/matawan/">Matawan</a></li>
+                                <li><a href="/monmouth-county/middletown/">Middletown</a></li>
+                                <li><a href="/monmouth-county/millstone/">Millstone</a></li>
+                                <li><a href="/monmouth-county/monmouth-beach/">Monmouth Beach</a></li>
+                                <li><a href="/monmouth-county/neptune-township/">Neptune Township</a></li>
+                                <li><a href="/monmouth-county/neptune-city/">Neptune City</a></li>
+                                <li><a href="/monmouth-county/ocean-township-monmouth/">Ocean Township</a></li>
+                                <li><a href="/monmouth-county/oceanport/">Oceanport</a></li>
+                                <li><a href="/monmouth-county/red-bank/">Red Bank</a></li>
+                                <li><a href="/monmouth-county/roosevelt/">Roosevelt</a></li>
+                                <li><a href="/monmouth-county/rumson/">Rumson</a></li>
+                                <li><a href="/monmouth-county/sea-bright/">Sea Bright</a></li>
+                                <li><a href="/monmouth-county/sea-girt/">Sea Girt</a></li>
+                                <li><a href="/monmouth-county/shrewsbury-borough/">Shrewsbury Borough</a></li>
+                                <li><a href="/monmouth-county/shrewsbury-township/">Shrewsbury Township</a></li>
+                                <li><a href="/monmouth-county/spring-lake/">Spring Lake</a></li>
+                                <li><a href="/monmouth-county/spring-lake-heights/">Spring Lake Heights</a></li>
+                                <li><a href="/monmouth-county/tinton-falls/">Tinton Falls</a></li>
+                                <li><a href="/monmouth-county/union-beach/">Union Beach</a></li>
+                                <li><a href="/monmouth-county/upper-freehold/">Upper Freehold</a></li>
+                                <li><a href="/monmouth-county/wall-township/">Wall Township</a></li>
+                                <li><a href="/monmouth-county/west-long-branch/">West Long Branch</a></li>
+                            </div>
+                            <li class="county-item" data-county="county12">Morris County ▸</li>
+                            <div class="county-towns" id="county12">
+                                <li><a href="/morris-county/boonton-town/">Boonton Town</a></li>
+                                <li><a href="/morris-county/boonton-township/">Boonton Township</a></li>
+                                <li><a href="/morris-county/butler/">Butler</a></li>
+                                <li><a href="/morris-county/chatham-borough/">Chatham Borough</a></li>
+                                <li><a href="/morris-county/chatham-township/">Chatham Township</a></li>
+                                <li><a href="/morris-county/chester-borough/">Chester Borough</a></li>
+                                <li><a href="/morris-county/chester-township/">Chester Township</a></li>
+                                <li><a href="/morris-county/denville/">Denville</a></li>
+                                <li><a href="/morris-county/dover/">Dover</a></li>
+                                <li><a href="/morris-county/east-hanover/">East Hanover</a></li>
+                                <li><a href="/morris-county/florham-park/">Florham Park</a></li>
+                                <li><a href="/morris-county/hanover-township/">Hanover Township</a></li>
+                                <li><a href="/morris-county/harding-township/">Harding Township</a></li>
+                                <li><a href="/morris-county/jefferson-township/">Jefferson Township</a></li>
+                                <li><a href="/morris-county/kinnelon/">Kinnelon</a></li>
+                                <li><a href="/morris-county/lincoln-park/">Lincoln Park</a></li>
+                                <li><a href="/morris-county/long-hill-township/">Long Hill Township</a></li>
+                                <li><a href="/morris-county/madison/">Madison</a></li>
+                                <li><a href="/morris-county/mendham-borough/">Mendham Borough</a></li>
+                                <li><a href="/morris-county/mendham-township/">Mendham Township</a></li>
+                                <li><a href="/morris-county/mine-hill-township/">Mine Hill Township</a></li>
+                                <li><a href="/morris-county/montville/">Montville</a></li>
+                                <li><a href="/morris-county/morris-plains/">Morris Plains</a></li>
+                                <li><a href="/morris-county/morristown/">Morristown</a></li>
+                                <li><a href="/morris-county/mount-arlington/">Mount Arlington</a></li>
+                                <li><a href="/morris-county/mount-olive/">Mount Olive</a></li>
+                                <li><a href="/morris-county/netcong/">Netcong</a></li>
+                                <li><a href="/morris-county/parsippany-troy-hills/">Parsippany-Troy Hills</a></li>
+                                <li><a href="/morris-county/pequannock-township/">Pequannock Township</a></li>
+                                <li><a href="/morris-county/randolph/">Randolph</a></li>
+                                <li><a href="/morris-county/riverdale/">Riverdale</a></li>
+                                <li><a href="/morris-county/rockaway-borough/">Rockaway Borough</a></li>
+                                <li><a href="/morris-county/rockaway-township/">Rockaway Township</a></li>
+                                <li><a href="/morris-county/roxbury/">Roxbury</a></li>
+                                <li><a href="/morris-county/victory-gardens/">Victory Gardens</a></li>
+                                <li><a href="/morris-county/washington-township-morris/">Washington Township</a></li>
+                                <li><a href="/morris-county/wharton/">Wharton</a></li>
+                            </div>
+                            <li class="county-item" data-county="county13">Ocean County ▸</li>
+                            <div class="county-towns" id="county13">
+                                <li><a href="/ocean-county/barnegat/">Barnegat</a></li>
+                                <li><a href="/ocean-county/bay-head/">Bay Head</a></li>
+                                <li><a href="/ocean-county/beach-haven/">Beach Haven</a></li>
+                                <li><a href="/ocean-county/beachwood/">Beachwood</a></li>
+                                <li><a href="/ocean-county/berkeley-township/">Berkeley Township</a></li>
+                                <li><a href="/ocean-county/brick-township/">Brick Township</a></li>
+                                <li><a href="/ocean-county/dover-township-ocean/">Dover Township</a></li>
+                                <li><a href="/ocean-county/eagleswood-township/">Eagleswood Township</a></li>
+                                <li><a href="/ocean-county/harvey-cedars/">Harvey Cedars</a></li>
+                                <li><a href="/ocean-county/island-heights/">Island Heights</a></li>
+                                <li><a href="/ocean-county/jackson-township/">Jackson Township</a></li>
+                                <li><a href="/ocean-county/lacey-township/">Lacey Township</a></li>
+                                <li><a href="/ocean-county/lakehurst/">Lakehurst</a></li>
+                                <li><a href="/ocean-county/lakewood/">Lakewood</a></li>
+                                <li><a href="/ocean-county/lavallette/">Lavallette</a></li>
+                                <li><a href="/ocean-county/little-egg-harbor-township/">Little Egg Harbor Township</a></li>
+                                <li><a href="/ocean-county/long-beach-township/">Long Beach Township</a></li>
+                                <li><a href="/ocean-county/manchester-township/">Manchester Township</a></li>
+                                <li><a href="/ocean-county/mantoloking/">Mantoloking</a></li>
+                                <li><a href="/ocean-county/ocean-gate/">Ocean Gate</a></li>
+                                <li><a href="/ocean-county/ocean-township-ocean/">Ocean Township</a></li>
+                                <li><a href="/ocean-county/pine-beach/">Pine Beach</a></li>
+                                <li><a href="/ocean-county/plumsted-township/">Plumsted Township</a></li>
+                                <li><a href="/ocean-county/point-pleasant-borough/">Point Pleasant Borough</a></li>
+                                <li><a href="/ocean-county/point-pleasant-beach/">Point Pleasant Beach</a></li>
+                                <li><a href="/ocean-county/seaside-heights/">Seaside Heights</a></li>
+                                <li><a href="/ocean-county/seaside-park/">Seaside Park</a></li>
+                                <li><a href="/ocean-county/ship-bottom/">Ship Bottom</a></li>
+                                <li><a href="/ocean-county/south-toms-river/">South Toms River</a></li>
+                                <li><a href="/ocean-county/stafford-township/">Stafford Township</a></li>
+                                <li><a href="/ocean-county/surf-city/">Surf City</a></li>
+                                <li><a href="/ocean-county/toms-river/">Toms River</a></li>
+                                <li><a href="/ocean-county/tuckerton/">Tuckerton</a></li>
+                            </div>
+                            <li class="county-item" data-county="county14">Passaic County ▸</li>
+                            <div class="county-towns" id="county14">
+                                <li><a href="/passaic-county/bloomingdale/">Bloomingdale</a></li>
+                                <li><a href="/passaic-county/clifton/">Clifton</a></li>
+                                <li><a href="/passaic-county/haledon/">Haledon</a></li>
+                                <li><a href="/passaic-county/hawthorne/">Hawthorne</a></li>
+                                <li><a href="/passaic-county/little-falls/">Little Falls</a></li>
+                                <li><a href="/passaic-county/north-haledon/">North Haledon</a></li>
+                                <li><a href="/passaic-county/passaic/">Passaic</a></li>
+                                <li><a href="/passaic-county/paterson/">Paterson</a></li>
+                                <li><a href="/passaic-county/pompton-lakes/">Pompton Lakes</a></li>
+                                <li><a href="/passaic-county/prospect-park/">Prospect Park</a></li>
+                                <li><a href="/passaic-county/ringwood/">Ringwood</a></li>
+                                <li><a href="/passaic-county/totowa/">Totowa</a></li>
+                                <li><a href="/passaic-county/wanaque/">Wanaque</a></li>
+                                <li><a href="/passaic-county/wayne/">Wayne</a></li>
+                                <li><a href="/passaic-county/west-milford/">West Milford</a></li>
+                                <li><a href="/passaic-county/woodland-park/">Woodland Park</a></li>
+                            </div>
+                            <li class="county-item" data-county="county15">Salem County ▸</li>
+                            <div class="county-towns" id="county15">
+                                <li><a href="/salem-county/alloway-township/">Alloway Township</a></li>
+                                <li><a href="/salem-county/carneys-point-township/">Carneys Point Township</a></li>
+                                <li><a href="/salem-county/elmer/">Elmer</a></li>
+                                <li><a href="/salem-county/elsinboro-township/">Elsinboro Township</a></li>
+                                <li><a href="/salem-county/lower-alloways-creek-township/">Lower Alloways Creek Township</a></li>
+                                <li><a href="/salem-county/mannington-township/">Mannington Township</a></li>
+                                <li><a href="/salem-county/oldmans-township/">Oldmans Township</a></li>
+                                <li><a href="/salem-county/penns-grove/">Penns Grove</a></li>
+                                <li><a href="/salem-county/pennsville-township/">Pennsville Township</a></li>
+                                <li><a href="/salem-county/pilesgrove-township/">Pilesgrove Township</a></li>
+                                <li><a href="/salem-county/pittsgrove-township/">Pittsgrove Township</a></li>
+                                <li><a href="/salem-county/quinton-township/">Quinton Township</a></li>
+                                <li><a href="/salem-county/salem/">Salem</a></li>
+                                <li><a href="/salem-county/upper-pittsgrove-township/">Upper Pittsgrove Township</a></li>
+                                <li><a href="/salem-county/woodstown/">Woodstown</a></li>
+                            </div>
+                            <li class="county-item" data-county="county16">Somerset County ▸</li>
+                            <div class="county-towns" id="county16">
+                                <li><a href="/somerset-county/bedminster/">Bedminster</a></li>
+                                <li><a href="/somerset-county/bernards-township/">Bernards Township</a></li>
+                                <li><a href="/somerset-county/bernardsville/">Bernardsville</a></li>
+                                <li><a href="/somerset-county/bound-brook/">Bound Brook</a></li>
+                                <li><a href="/somerset-county/branchburg/">Branchburg</a></li>
+                                <li><a href="/somerset-county/bridgewater/">Bridgewater</a></li>
+                                <li><a href="/somerset-county/far-hills/">Far Hills</a></li>
+                                <li><a href="/somerset-county/franklin-township-somerset/">Franklin Township</a></li>
+                                <li><a href="/somerset-county/green-brook/">Green Brook</a></li>
+                                <li><a href="/somerset-county/hillsborough/">Hillsborough</a></li>
+                                <li><a href="/somerset-county/manville/">Manville</a></li>
+                                <li><a href="/somerset-county/millstone-borough/">Millstone Borough</a></li>
+                                <li><a href="/somerset-county/montgomery-township/">Montgomery Township</a></li>
+                                <li><a href="/somerset-county/north-plainfield/">North Plainfield</a></li>
+                                <li><a href="/somerset-county/peapack-gladstone/">Peapack-Gladstone</a></li>
+                                <li><a href="/somerset-county/raritan/">Raritan</a></li>
+                                <li><a href="/somerset-county/rocky-hill/">Rocky Hill</a></li>
+                                <li><a href="/somerset-county/somerville/">Somerville</a></li>
+                                <li><a href="/somerset-county/south-bound-brook/">South Bound Brook</a></li>
+                                <li><a href="/somerset-county/warren-township/">Warren Township</a></li>
+                                <li><a href="/somerset-county/watchung/">Watchung</a></li>
+                            </div>
+                            <li class="county-item" data-county="county17">Sussex County ▸</li>
+                            <div class="county-towns" id="county17">
+                                <li><a href="/sussex-county/andover-borough/">Andover Borough</a></li>
+                                <li><a href="/sussex-county/andover-township/">Andover Township</a></li>
+                                <li><a href="/sussex-county/branchville/">Branchville</a></li>
+                                <li><a href="/sussex-county/byram-township/">Byram Township</a></li>
+                                <li><a href="/sussex-county/frankford-township/">Frankford Township</a></li>
+                                <li><a href="/sussex-county/franklin/">Franklin</a></li>
+                                <li><a href="/sussex-county/fredon-township/">Fredon Township</a></li>
+                                <li><a href="/sussex-county/green-township/">Green Township</a></li>
+                                <li><a href="/sussex-county/hamburg/">Hamburg</a></li>
+                                <li><a href="/sussex-county/hardyston-township/">Hardyston Township</a></li>
+                                <li><a href="/sussex-county/hopatcong/">Hopatcong</a></li>
+                                <li><a href="/sussex-county/lafayette-township/">Lafayette Township</a></li>
+                                <li><a href="/sussex-county/montague-township/">Montague Township</a></li>
+                                <li><a href="/sussex-county/newton/">Newton</a></li>
+                                <li><a href="/sussex-county/ogdensburg/">Ogdensburg</a></li>
+                                <li><a href="/sussex-county/sandyston-township/">Sandyston Township</a></li>
+                                <li><a href="/sussex-county/sparta-township/">Sparta Township</a></li>
+                                <li><a href="/sussex-county/stanhope/">Stanhope</a></li>
+                                <li><a href="/sussex-county/stillwater-township/">Stillwater Township</a></li>
+                                <li><a href="/sussex-county/sussex/">Sussex</a></li>
+                                <li><a href="/sussex-county/vernon-township/">Vernon Township</a></li>
+                                <li><a href="/sussex-county/walpack-township/">Walpack Township</a></li>
+                                <li><a href="/sussex-county/wantage-township/">Wantage Township</a></li>
+                            </div>
+                            <li class="county-item" data-county="county18">Union County ▸</li>
+                            <div class="county-towns" id="county18">
+                                <li><a href="/union-county/berkeley-heights/">Berkeley Heights</a></li>
+                                <li><a href="/union-county/clark/">Clark</a></li>
+                                <li><a href="/union-county/cranford/">Cranford</a></li>
+                                <li><a href="/union-county/elizabeth/">Elizabeth</a></li>
+                                <li><a href="/union-county/fanwood/">Fanwood</a></li>
+                                <li><a href="/union-county/garwood/">Garwood</a></li>
+                                <li><a href="/union-county/hillside/">Hillside</a></li>
+                                <li><a href="/union-county/kenilworth/">Kenilworth</a></li>
+                                <li><a href="/union-county/linden/">Linden</a></li>
+                                <li><a href="/union-county/mountainside/">Mountainside</a></li>
+                                <li><a href="/union-county/new-providence/">New Providence</a></li>
+                                <li><a href="/union-county/plainfield/">Plainfield</a></li>
+                                <li><a href="/union-county/rahway/">Rahway</a></li>
+                                <li><a href="/union-county/roselle/">Roselle</a></li>
+                                <li><a href="/union-county/roselle-park/">Roselle Park</a></li>
+                                <li><a href="/union-county/scotch-plains/">Scotch Plains</a></li>
+                                <li><a href="/union-county/springfield/">Springfield</a></li>
+                                <li><a href="/union-county/summit/">Summit</a></li>
+                                <li><a href="/union-county/union-township/">Union Township</a></li>
+                                <li><a href="/union-county/westfield/">Westfield</a></li>
+                                <li><a href="/union-county/winfield/">Winfield</a></li>
+                            </div>
+                            <li class="county-item" data-county="county19">Warren County ▸</li>
+                            <div class="county-towns" id="county19">
+                                <li><a href="/warren-county/allamuchy-township/">Allamuchy Township</a></li>
+                                <li><a href="/warren-county/alpha/">Alpha</a></li>
+                                <li><a href="/warren-county/belvidere/">Belvidere</a></li>
+                                <li><a href="/warren-county/blairstown/">Blairstown</a></li>
+                                <li><a href="/warren-county/franklin-township-warren/">Franklin Township</a></li>
+                                <li><a href="/warren-county/frelinghuysen-township/">Frelinghuysen Township</a></li>
+                                <li><a href="/warren-county/greenwich-township-warren/">Greenwich Township</a></li>
+                                <li><a href="/warren-county/hackettstown/">Hackettstown</a></li>
+                                <li><a href="/warren-county/harmony-township/">Harmony Township</a></li>
+                                <li><a href="/warren-county/hope-township/">Hope Township</a></li>
+                                <li><a href="/warren-county/independence-township/">Independence Township</a></li>
+                                <li><a href="/warren-county/knowlton-township/">Knowlton Township</a></li>
+                                <li><a href="/warren-county/liberty-township/">Liberty Township</a></li>
+                                <li><a href="/warren-county/lopatcong-township/">Lopatcong Township</a></li>
+                                <li><a href="/warren-county/mansfield-township-warren/">Mansfield Township</a></li>
+                                <li><a href="/warren-county/oxford-township/">Oxford Township</a></li>
+                                <li><a href="/warren-county/phillipsburg/">Phillipsburg</a></li>
+                                <li><a href="/warren-county/pohatcong-township/">Pohatcong Township</a></li>
+                                <li><a href="/warren-county/washington-borough/">Washington Borough</a></li>
+                                <li><a href="/warren-county/washington-township-warren/">Washington Township</a></li>
+                                <li><a href="/warren-county/white-township/">White Township</a></li>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+                <button class="nav-call-btn" id="navCallNow">Call Toll-Free</button>
             </div>
         </div>
     </header>
 
+    <main>
     <section class="hero">
         <div class="container">
             <h1>Vent Hood Repair<br>Clute, Texas</h1>
             <p>Same-Day Service • Trained Technicians • Clute, TX</p>
-            <button class="btn" onclick="window.location.href='tel:+18005551234'">Request Service Today</button>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <button class="btn" id="heroCallNow">Request Service Today</button>
+            <button class="btn modal-trigger" data-modal="reviewsModal" style="background: transparent; border: 2px solid white;">★ Read Reviews</button>
+        </div>
         </div>
     </section>
-
-    <section>
-        <div class="container" style="max-width: 900px;">
+    <section style="padding: 60px 0; background: #fff;" aria-labelledby="about-section-heading">
+        <div class="container" style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
             <article itemscope itemtype="https://schema.org/Service">
                 <meta itemprop="serviceType" content="Vent Hood Repair">
                 <meta itemprop="areaServed" content="Brazoria County, Texas">
-                <h2 style="text-align:center; font-size:32px; margin-bottom:30px;">Professional Vent Hood Repair in Clute</h2>
-                <div id="expandable-content-1" class="expandable-content">
-                    <div id="expandable-text-1" itemprop="description" style="line-height: 1.8; color: #444; font-size: 16px;">
-                        <p style="margin-bottom: 15px;">Vent hood repairs often involve motor replacement, fan blade service, or control panel diagnosis. Our technicians service all vent hood models including ducted and ductless configurations.</p>
-                        <p style="margin-bottom: 15px;">Serving Clute and surrounding Brazoria County communities, our trained technicians bring expert appliance repair directly to your home.</p>
+                <h2 style="text-align:center; font-size:32px; margin-bottom:30px; color: var(--blue);">Professional Vent Hood Repair in Clute</h2>
+                <div id="expandable-content-1" style="position: relative;">
+                    <div id="expandable-text-1" itemprop="description" style="max-height: 110px; overflow: hidden; transition: max-height 0.4s ease; line-height: 1.8; color: #444; font-size: 16px;">
+                        <p style="margin-bottom: 15px;">Freezer failures demand immediate attention. From defrost system malfunctions to compressor issues, our technicians diagnose and resolve vent hood problems to minimize food loss and restore reliable operation.</p>
+                        <p style="margin-bottom: 15px;">Serving Clute, nestled in the scenic Brazoria County highlands, our professional technicians bring specialized vent hood expertise directly to your home.</p>
                         <h3 style="font-size: 20px; color: var(--blue); margin: 25px 0 15px;">Why Choose Us in Brazoria County</h3>
-                        <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
+<ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
                             <li style="padding: 12px 0; border-bottom: 1px solid #eee; display: flex; align-items: flex-start;">
                                 <span style="color: var(--red); font-weight: bold; margin-right: 10px; font-size: 18px;">✓</span>
                                 <span><strong>Transparent Pricing:</strong> You'll receive a complete quote before any work begins. No hidden fees or surprise charges.</span>
                             </li>
                             <li style="padding: 12px 0; border-bottom: 1px solid #eee; display: flex; align-items: flex-start;">
                                 <span style="color: var(--red); font-weight: bold; margin-right: 10px; font-size: 18px;">✓</span>
-                                <span><strong>Stocked Service Vehicles:</strong> Technicians arrive with commonly needed parts, completing most repairs during the first visit.</span>
-                            </li>
-                            <li style="padding: 12px 0; border-bottom: 1px solid #eee; display: flex; align-items: flex-start;">
-                                <span style="color: var(--red); font-weight: bold; margin-right: 10px; font-size: 18px;">✓</span>
-                                <span><strong>Trained Specialists:</strong> Our technicians hold professional training ensuring repairs meet manufacturer standards.</span>
-                            </li>
-                            <li style="padding: 12px 0; border-bottom: 1px solid #eee; display: flex; align-items: flex-start;">
-                                <span style="color: var(--red); font-weight: bold; margin-right: 10px; font-size: 18px;">✓</span>
-                                <span><strong>Licensed and Insured:</strong> Full liability coverage protects your home. Insurance certificates available upon request.</span>
-                            </li>
-                            <li style="padding: 12px 0; border-bottom: 1px solid #eee; display: flex; align-items: flex-start;">
-                                <span style="color: var(--red); font-weight: bold; margin-right: 10px; font-size: 18px;">✓</span>
-                                <span><strong>Senior Discounts:</strong> Special pricing available for senior residents in the community.</span>
-                            </li>
-                            <li style="padding: 12px 0; border-bottom: 1px solid #eee; display: flex; align-items: flex-start;">
-                                <span style="color: var(--red); font-weight: bold; margin-right: 10px; font-size: 18px;">✓</span>
-                                <span><strong>Local Texas Team:</strong> Technicians dispatched from nearby locations ensure fast arrival and familiarity with the area.</span>
-                            </li>
-                            <li style="padding: 12px 0; border-bottom: 1px solid #eee; display: flex; align-items: flex-start;">
-                                <span style="color: var(--red); font-weight: bold; margin-right: 10px; font-size: 18px;">✓</span>
-                                <span><strong>Free Follow-Up:</strong> If any problems arise after repair, we return to resolve them at no extra charge.</span>
-                            </li>
-                            <li style="padding: 12px 0; border-bottom: 1px solid #eee; display: flex; align-items: flex-start;">
-                                <span style="color: var(--red); font-weight: bold; margin-right: 10px; font-size: 18px;">✓</span>
-                                <span><strong>Same-Day Appointments:</strong> Same-day service available throughout Texas when you call before noon.</span>
+                                <span><strong>Energy Efficiency Check:</strong> We verify your repaired appliance operates at peak efficiency, potentially lowering utility bills.</span>
                             </li>
                             <li style="padding: 12px 0; border-bottom: 1px solid #eee; display: flex; align-items: flex-start;">
                                 <span style="color: var(--red); font-weight: bold; margin-right: 10px; font-size: 18px;">✓</span>
@@ -271,91 +1669,930 @@
                             </li>
                             <li style="padding: 12px 0; border-bottom: 1px solid #eee; display: flex; align-items: flex-start;">
                                 <span style="color: var(--red); font-weight: bold; margin-right: 10px; font-size: 18px;">✓</span>
-                                <span><strong>24/7 Emergency Service:</strong> Emergency repairs available outside regular hours for urgent situations.</span>
+                                <span><strong>Free Follow-Up:</strong> If any problems arise after repair, we return to resolve them at no extra charge.</span>
+                            </li>
+                            <li style="padding: 12px 0; border-bottom: 1px solid #eee; display: flex; align-items: flex-start;">
+                                <span style="color: var(--red); font-weight: bold; margin-right: 10px; font-size: 18px;">✓</span>
+                                <span><strong>Local Service Team:</strong> Technicians dispatched from nearby locations ensure fast arrival and familiarity with the area.</span>
+                            </li>
+                            <li style="padding: 12px 0; border-bottom: 1px solid #eee; display: flex; align-items: flex-start;">
+                                <span style="color: var(--red); font-weight: bold; margin-right: 10px; font-size: 18px;">✓</span>
+                                <span><strong>24/7 Support Available:</strong> Emergency repairs available outside regular hours for urgent situations.</span>
+                            </li>
+                            <li style="padding: 12px 0; border-bottom: 1px solid #eee; display: flex; align-items: flex-start;">
+                                <span style="color: var(--red); font-weight: bold; margin-right: 10px; font-size: 18px;">✓</span>
+                                <span><strong>Professional Specialists:</strong> Our technicians hold factory certifications specifically for appliances, ensuring repairs meet manufacturer standards.</span>
+                            </li>
+                            <li style="padding: 12px 0; border-bottom: 1px solid #eee; display: flex; align-items: flex-start;">
+                                <span style="color: var(--red); font-weight: bold; margin-right: 10px; font-size: 18px;">✓</span>
+                                <span><strong>Genuine Parts:</strong> Every repair uses authentic components, maintaining warranty coverage and ensuring long-lasting results.</span>
                             </li>
                             <li style="padding: 12px 0; display: flex; align-items: flex-start;">
                                 <span style="color: var(--red); font-weight: bold; margin-right: 10px; font-size: 18px;">✓</span>
-                                <span><strong>Flexible Scheduling:</strong> We offer appointments seven days a week, including evenings, to fit your schedule.</span>
+                                <span><strong>Clean Work Guarantee:</strong> Technicians protect your floors and clean up completely after every repair.</span>
                             </li>
                         </ul>
                     </div>
+                    <div id="expandable-fade-1" style="position: absolute; bottom: 0; left: 0; right: 0; height: 50px; background: linear-gradient(transparent, #fff); pointer-events: none;" aria-hidden="true"></div>
                 </div>
-                <button class="expand-btn" onclick="this.previousElementSibling.classList.toggle('expanded'); this.textContent = this.textContent === '+ Show More' ? '- Show Less' : '+ Show More';">+ Show More</button>
+                <button id="expandable-btn-1" onclick="toggleExpand('1')" aria-expanded="false" aria-controls="expandable-text-1" style="display: block; margin: 20px auto 0; background: none; border: none; color: var(--blue); font-size: 16px; font-weight: 600; cursor: pointer; padding: 10px 20px; transition: color 0.3s;">+ Show More</button>
             </article>
         </div>
     </section>
-
     <section class="alt">
         <div class="container">
-            <h2 style="text-align:center; font-size:36px; margin-bottom:20px;">Our Repair Services in Clute</h2>
+            <h2 style="text-align:center; font-size:36px; margin-bottom:50px;">Vent Hood Repair Services in Clute</h2>
             <div class="services-grid">
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/refrigerator.webp" alt="Refrigerator repair" width="80" height="80" loading="lazy"></div>
-                    <h3>Refrigerator Repair</h3>
-                </div>
-                <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/washer.webp" alt="Washer repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/washer.webp" alt="LG Washer repair" width="80" height="80" loading="lazy"></div>
                     <h3>Washer Repair</h3>
+                    <div class="service-types">
+                        <h4>We Service All Types:</h4>
+                        <ul>
+                            <li>Front Load Washers</li>
+                            <li>Top Load Washers</li>
+                            <li>Commercial Washers</li>
+                            <li>Residential Washers</li>
+                            <li>Portable Washers</li>
+                            <li>Washer/Dryer Combos</li>
+                            <li>Stackable Washers</li>
+                            <li>TurboWash Models</li>
+                            <li>Smart ThinQ Washers</li>
+                            <li>Steam Washers</li>
+                            <li>High-Efficiency Models</li>
+                        </ul>
+                        <div id="expandable-content-washer" style="position: relative; margin-top: 15px;">
+                            <div id="expandable-text-washer" style="max-height: 80px; overflow: hidden; transition: max-height 0.4s ease; line-height: 1.7; color: #444; font-size: 14px;">
+                                <p style="margin-bottom: 12px;">Our professional technicians provide comprehensive <strong>washer repair</strong> throughout Clute, TX. We service all washer types including front load, top load, stackable, and commercial units. Common repairs include drum bearing replacement, door boot seal fixes, drain pump service, and control board diagnostics. Whether your washer won't spin, drain, or start, we arrive with genuine parts for same-day repairs. TurboWash, Steam, and Smart ThinQ models are our specialty.</p>
+                            </div>
+                            <div id="expandable-fade-washer" style="position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: linear-gradient(transparent, rgba(0,48,135,0.05)); pointer-events: none;" aria-hidden="true"></div>
+                        </div>
+                        <button id="expandable-btn-washer" onclick="toggleExpand('washer')" aria-expanded="false" style="display: block; margin: 10px auto 0; background: none; border: none; color: var(--blue); font-size: 14px; font-weight: 600; cursor: pointer; padding: 8px 15px;">+ Show More</button>
+                    </div>
                 </div>
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/dryer.webp" alt="Dryer repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/dryer.webp" alt="LG Dryer repair" width="80" height="80" loading="lazy"></div>
                     <h3>Dryer Repair</h3>
+                    <div class="service-types">
+                        <h4>We Service All Types:</h4>
+                        <ul>
+                            <li>Gas Dryers</li>
+                            <li>Electric Dryers</li>
+                            <li>Ventless Dryers</li>
+                            <li>Heat Pump Dryers</li>
+                            <li>Front Load Dryers</li>
+                            <li>Top Load Dryers</li>
+                            <li>Residential & Commercial</li>
+                            <li>Steam Dryers</li>
+                            <li>Smart ThinQ Dryers</li>
+                            <li>Stackable Dryers</li>
+                            <li>Sensor Dry Models</li>
+                        </ul>
+                        <div id="expandable-content-dryer" style="position: relative; margin-top: 15px;">
+                            <div id="expandable-text-dryer" style="max-height: 80px; overflow: hidden; transition: max-height 0.4s ease; line-height: 1.7; color: #444; font-size: 14px;">
+                                <p style="margin-bottom: 12px;">Professional <strong>dryer repair</strong> service in Clute for gas and electric models. Our technicians diagnose and fix heating element failures, thermal fuse problems, drum roller issues, and ventilation concerns. We service heat pump dryers, ventless models, and stackable units. Common repairs include belt replacement, igniter service for gas dryers, and moisture sensor calibration. Same-day service available with warranty-backed repairs. We also provide <a href="/brazoria-county/delaware-township/vent-hood-repair/">vent hood repair in Delaware Township</a> using genuine parts.</p>
+                            </div>
+                            <div id="expandable-fade-dryer" style="position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: linear-gradient(transparent, rgba(0,48,135,0.05)); pointer-events: none;" aria-hidden="true"></div>
+                        </div>
+                        <button id="expandable-btn-dryer" onclick="toggleExpand('dryer')" aria-expanded="false" style="display: block; margin: 10px auto 0; background: none; border: none; color: var(--blue); font-size: 14px; font-weight: 600; cursor: pointer; padding: 8px 15px;">+ Show More</button>
+                    </div>
                 </div>
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/dishwasher.webp" alt="Dishwasher repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/oven.webp" alt="LG Oven repair" width="80" height="80" loading="lazy"></div>
+                    <h3>Oven & Range Repair</h3>
+                    <div class="service-types">
+                        <h4>We Service All Types:</h4>
+                        <ul>
+                            <li>Gas Ovens</li>
+                            <li>Electric Ovens</li>
+                            <li>Wall Ovens</li>
+                            <li>Convection Ovens</li>
+                            <li>Steam Ovens</li>
+                            <li>Microwave Combos</li>
+                            <li>Double Wall Ovens</li>
+                            <li>Slide-In Ranges</li>
+                            <li>Freestanding Ranges</li>
+                            <li>Smart Ranges</li>
+                            <li>ProBake Models</li>
+                        </ul>
+                        <div id="expandable-content-oven" style="position: relative; margin-top: 15px;">
+                            <div id="expandable-text-oven" style="max-height: 80px; overflow: hidden; transition: max-height 0.4s ease; line-height: 1.7; color: #444; font-size: 14px;">
+                                <p style="margin-bottom: 12px;">Expert <strong>oven and range repair</strong> in Clute, TX covering gas, electric, and dual-fuel models. We fix heating element failures, temperature sensor issues, igniter problems, and control board malfunctions. Our technicians service wall ovens, slide-in ranges, double ovens, and convection models. Common repairs include bake and broil element replacement, door hinge fixes, and self-cleaning cycle issues. ProBake Convection and InstaView models serviced.</p>
+                            </div>
+                            <div id="expandable-fade-oven" style="position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: linear-gradient(transparent, rgba(0,48,135,0.05)); pointer-events: none;" aria-hidden="true"></div>
+                        </div>
+                        <button id="expandable-btn-oven" onclick="toggleExpand('oven')" aria-expanded="false" style="display: block; margin: 10px auto 0; background: none; border: none; color: var(--blue); font-size: 14px; font-weight: 600; cursor: pointer; padding: 8px 15px;">+ Show More</button>
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="service-icon"><img src="/assets/images/appliances/refrigerator.webp" alt="LG Refrigerator repair" width="80" height="80" loading="lazy"></div>
+                    <h3>Refrigerator Repair</h3>
+                    <div class="service-types">
+                        <h4>We Service All Types:</h4>
+                        <ul>
+                            <li>Top-Freezer</li>
+                            <li>Bottom-Freezer</li>
+                            <li>Side-by-Side</li>
+                            <li>French Door</li>
+                            <li>Built-In</li>
+                            <li>Counter Depth</li>
+                            <li>InstaView Door-in-Door</li>
+                            <li>Smart Refrigerators</li>
+                            <li>Craft Ice Models</li>
+                            <li>Column Refrigerators</li>
+                            <li>Compact Refrigerators</li>
+                        </ul>
+                        <div id="expandable-content-fridge" style="position: relative; margin-top: 15px;">
+                            <div id="expandable-text-fridge" style="max-height: 80px; overflow: hidden; transition: max-height 0.4s ease; line-height: 1.7; color: #444; font-size: 14px;">
+                                <p style="margin-bottom: 12px;">Comprehensive <strong>refrigerator repair</strong> throughout Clute. We service French door, side-by-side, top-freezer, and bottom-freezer models. Common repairs include compressor service, ice maker fixes, cooling system diagnostics, and water dispenser repairs. Our technicians handle InstaView Door-in-Door issues, Craft Ice maker problems, and Smart ThinQ connectivity. Same-day emergency service available for cooling failures to protect your food.</p>
+                            </div>
+                            <div id="expandable-fade-fridge" style="position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: linear-gradient(transparent, rgba(0,48,135,0.05)); pointer-events: none;" aria-hidden="true"></div>
+                        </div>
+                        <button id="expandable-btn-fridge" onclick="toggleExpand('fridge')" aria-expanded="false" style="display: block; margin: 10px auto 0; background: none; border: none; color: var(--blue); font-size: 14px; font-weight: 600; cursor: pointer; padding: 8px 15px;">+ Show More</button>
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="service-icon"><img src="/assets/images/appliances/dishwasher.webp" alt="LG Dishwasher repair" width="80" height="80" loading="lazy"></div>
                     <h3>Dishwasher Repair</h3>
+                    <div class="service-types">
+                        <h4>We Service All Types:</h4>
+                        <ul>
+                            <li>Built-In Dishwashers</li>
+                            <li>Integrated / Panel-Ready</li>
+                            <li>Tall Tub</li>
+                            <li>Portable</li>
+                            <li>Dishwasher Drawers</li>
+                            <li>Top Control</li>
+                            <li>Front Control</li>
+                            <li>QuadWash Models</li>
+                            <li>TrueSteam Models</li>
+                            <li>Smart ThinQ Dishwashers</li>
+                            <li>Third Rack Models</li>
+                        </ul>
+                        <div id="expandable-content-dishwasher" style="position: relative; margin-top: 15px;">
+                            <div id="expandable-text-dishwasher" style="max-height: 80px; overflow: hidden; transition: max-height 0.4s ease; line-height: 1.7; color: #444; font-size: 14px;">
+                                <p style="margin-bottom: 12px;">Reliable <strong>dishwasher repair</strong> in Clute, TX. Our trained technicians fix drainage problems, spray arm issues, pump failures, and control panel malfunctions. We service built-in, portable, and drawer dishwashers with QuadWash, TrueSteam, and Smart ThinQ features. Common repairs include door latch fixes, water inlet valve replacement, and heating element service. Same-day appointments available throughout Brazoria County.</p>
+                            </div>
+                            <div id="expandable-fade-dishwasher" style="position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: linear-gradient(transparent, rgba(0,48,135,0.05)); pointer-events: none;" aria-hidden="true"></div>
+                        </div>
+                        <button id="expandable-btn-dishwasher" onclick="toggleExpand('dishwasher')" aria-expanded="false" style="display: block; margin: 10px auto 0; background: none; border: none; color: var(--blue); font-size: 14px; font-weight: 600; cursor: pointer; padding: 8px 15px;">+ Show More</button>
+                    </div>
                 </div>
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/oven.webp" alt="Oven repair" width="80" height="80" loading="lazy"></div>
-                    <h3>Oven Repair</h3>
-                </div>
-                <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/cooktop.webp" alt="Cooktop repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/cooktop.webp" alt="LG Cooktop repair" width="80" height="80" loading="lazy"></div>
                     <h3>Cooktop Repair</h3>
+                    <div class="service-types">
+                        <h4>We Service All Types:</h4>
+                        <ul>
+                            <li>Gas Cooktops</li>
+                            <li>Electric Cooktops</li>
+                            <li>Induction Cooktops</li>
+                            <li>Radiant Cooktops</li>
+                            <li>Smoothtop Electric</li>
+                            <li>Downdraft Cooktops</li>
+                            <li>Modular Cooktops</li>
+                            <li>Built-In Cooktops</li>
+                            <li>30-Inch Models</li>
+                            <li>36-Inch Models</li>
+                            <li>Smart Cooktops</li>
+                        </ul>
+                        <div id="expandable-content-cooktop" style="position: relative; margin-top: 15px;">
+                            <div id="expandable-text-cooktop" style="max-height: 80px; overflow: hidden; transition: max-height 0.4s ease; line-height: 1.7; color: #444; font-size: 14px;">
+                                <p style="margin-bottom: 12px;">Professional <strong>cooktop repair</strong> service in Clute for gas, electric, and induction models. We diagnose and fix burner ignition problems, element failures, touch control issues, and temperature inconsistencies. Our technicians service radiant cooktops, smoothtops, and downdraft models. Common repairs include igniter replacement, gas valve service, and induction coil diagnostics. Built-in and modular configurations expertly serviced.</p>
+                            </div>
+                            <div id="expandable-fade-cooktop" style="position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: linear-gradient(transparent, rgba(0,48,135,0.05)); pointer-events: none;" aria-hidden="true"></div>
+                        </div>
+                        <button id="expandable-btn-cooktop" onclick="toggleExpand('cooktop')" aria-expanded="false" style="display: block; margin: 10px auto 0; background: none; border: none; color: var(--blue); font-size: 14px; font-weight: 600; cursor: pointer; padding: 8px 15px;">+ Show More</button>
+                    </div>
                 </div>
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/microwave.webp" alt="Microwave repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/microwave.webp" alt="LG Microwave repair" width="80" height="80" loading="lazy"></div>
                     <h3>Microwave Repair</h3>
+                    <div class="service-types">
+                        <h4>We Service All Types:</h4>
+                        <ul>
+                            <li>Convection Microwaves</li>
+                            <li>Countertop Microwaves</li>
+                            <li>Built-in Microwaves</li>
+                            <li>Over-the-Range</li>
+                            <li>Undercounter Microwaves</li>
+                            <li>Smart Microwaves</li>
+                            <li>Microwave Drawers</li>
+                            <li>Wall Oven Combos</li>
+                            <li>Commercial Microwaves</li>
+                            <li>Low Profile</li>
+                            <li>Compact & Solo</li>
+                        </ul>
+                        <div id="expandable-content-microwave" style="position: relative; margin-top: 15px;">
+                            <div id="expandable-text-microwave" style="max-height: 80px; overflow: hidden; transition: max-height 0.4s ease; line-height: 1.7; color: #444; font-size: 14px;">
+                                <p style="margin-bottom: 12px;">Expert <strong>microwave repair</strong> throughout Clute, TX. We service countertop, over-the-range, built-in, and microwave drawer models. Common repairs include magnetron replacement, turntable motor fixes, door switch service, and control panel diagnostics. Our technicians handle convection microwaves, Smart ThinQ models, and combination wall oven units. Ventilation fan and charcoal filter service for over-the-range installations.</p>
+                            </div>
+                            <div id="expandable-fade-microwave" style="position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: linear-gradient(transparent, rgba(0,48,135,0.05)); pointer-events: none;" aria-hidden="true"></div>
+                        </div>
+                        <button id="expandable-btn-microwave" onclick="toggleExpand('microwave')" aria-expanded="false" style="display: block; margin: 10px auto 0; background: none; border: none; color: var(--blue); font-size: 14px; font-weight: 600; cursor: pointer; padding: 8px 15px;">+ Show More</button>
+                    </div>
                 </div>
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/freezer.webp" alt="Freezer repair" width="80" height="80" loading="lazy"></div>
-                    <h3>Freezer Repair</h3>
-                </div>
-                <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/wine-cooler.webp" alt="Wine Cooler repair" width="80" height="80" loading="lazy"></div>
+                    <div class="service-icon"><img src="/assets/images/appliances/wine-cooler.webp" alt="LG Wine Cooler repair" width="80" height="80" loading="lazy"></div>
                     <h3>Wine Cooler Repair</h3>
+                    <div class="service-types">
+                        <h4>We Service All Types:</h4>
+                        <ul>
+                            <li>Compressor Wine Coolers</li>
+                            <li>Thermoelectric Wine Coolers</li>
+                            <li>Countertop Wine Coolers</li>
+                            <li>Single Zone</li>
+                            <li>Dual Zone</li>
+                            <li>Freestanding</li>
+                            <li>Undercounter / Built-In</li>
+                            <li>Wine Cellars</li>
+                            <li>Beverage Centers</li>
+                            <li>Combination Units</li>
+                            <li>Full-Size Wine Fridges</li>
+                        </ul>
+                        <div id="expandable-content-wine" style="position: relative; margin-top: 15px;">
+                            <div id="expandable-text-wine" style="max-height: 80px; overflow: hidden; transition: max-height 0.4s ease; line-height: 1.7; color: #444; font-size: 14px;">
+                                <p style="margin-bottom: 12px;">Specialized <strong>wine cooler repair</strong> in Clute. Our technicians service built-in, freestanding, and undercounter wine refrigerators. We diagnose cooling system problems, temperature control issues, compressor failures, and thermoelectric system malfunctions. Common repairs include fan motor replacement, temperature sensor calibration, and door seal fixes. Dual-zone and single-zone models expertly serviced to protect your wine collection.</p>
+                            </div>
+                            <div id="expandable-fade-wine" style="position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: linear-gradient(transparent, rgba(0,48,135,0.05)); pointer-events: none;" aria-hidden="true"></div>
+                        </div>
+                        <button id="expandable-btn-wine" onclick="toggleExpand('wine')" aria-expanded="false" style="display: block; margin: 10px auto 0; background: none; border: none; color: var(--blue); font-size: 14px; font-weight: 600; cursor: pointer; padding: 8px 15px;">+ Show More</button>
+                    </div>
                 </div>
                 <div class="service">
-                    <div class="service-icon"><img src="/assets/images/appliances/vent-hood.webp" alt="Vent Hood repair" width="80" height="80" loading="lazy"></div>
-                    <h3>Vent Hood Repair</h3>
+                    <div class="service-icon"><img src="/assets/images/appliances/hood-vent.webp" alt="LG Vent Hood repair" width="80" height="80" loading="lazy"></div>
+                    <h3>Hood Vent Repair</h3>
+                    <div class="service-types">
+                        <h4>We Service All Types:</h4>
+                        <ul>
+                            <li>Wall Mount Range Hoods</li>
+                            <li>Under Cabinet Hoods</li>
+                            <li>Island Range Hoods</li>
+                            <li>Downdraft Ventilation</li>
+                            <li>Ducted Range Hoods</li>
+                            <li>Ductless Range Hoods</li>
+                            <li>Convertible Hoods</li>
+                            <li>Built-In Ventilation</li>
+                            <li>Chimney Hoods</li>
+                            <li>Low Profile Hoods</li>
+                            <li>Commercial Ventilation</li>
+                        </ul>
+                        <div id="expandable-content-hood" style="position: relative; margin-top: 15px;">
+                            <div id="expandable-text-hood" style="max-height: 80px; overflow: hidden; transition: max-height 0.4s ease; line-height: 1.7; color: #444; font-size: 14px;">
+                                <p style="margin-bottom: 12px;">Professional <strong>vent hood repair</strong> in Clute, TX. Our technicians service wall mount, under cabinet, island, and downdraft range hoods. We diagnose and fix motor failures, fan issues, lighting problems, and control malfunctions. Common repairs include blower motor replacement, grease filter service, LED light fixes, and speed control repairs. Ducted and ductless configurations expertly serviced for optimal kitchen ventilation.</p>
+                            </div>
+                            <div id="expandable-fade-hood" style="position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: linear-gradient(transparent, rgba(0,48,135,0.05)); pointer-events: none;" aria-hidden="true"></div>
+                        </div>
+                        <button id="expandable-btn-hood" onclick="toggleExpand('hood')" aria-expanded="false" style="display: block; margin: 10px auto 0; background: none; border: none; color: var(--blue); font-size: 14px; font-weight: 600; cursor: pointer; padding: 8px 15px;">+ Show More</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section>
+    <section class="alt" id="contact">
         <div class="container">
-            <div class="nearby-towns">
-                <h3 style="text-align:center; margin-bottom: 20px;">We Also Serve Nearby Brazoria County Areas</h3>
-                <ul>
-<li><a href="/brazoria-county/lake-jackson/">Lake Jackson</a></li>
-<li><a href="/brazoria-county/alvin/">Alvin</a></li>
-<li><a href="/brazoria-county/angleton/">Angleton</a></li>
-<li><a href="/brazoria-county/freeport/">Freeport</a></li>
-<li><a href="/brazoria-county/brazoria/">Brazoria</a></li>
-<li><a href="/brazoria-county/richwood/">Richwood</a></li>
-                </ul>
+            <section id="sa-service-areas">
+                <h2>Trained Appliance Repair Specialists</h2>
+                <p>We proudly serve <strong>every single town and municipality</strong> in Brazoria County with fast, reliable, same-day appliance repair.</p>
+                <div class="sa-dropdown-container">
+                    <button class="sa-dropdown-button" id="saToggleBtn">View All Brazoria County Service Areas</button>
+                    <div class="sa-dropdown-content" id="saDropdownContent">
+                        <div class="sa-slide">
+                            <h2>Texas Appliances Repair Service Areas in Brazoria County</h2>
+                      <ul id="townsList">
+                                <li><a href="/brazoria-county/alexandria-township/"><h3>Alexandria Township</h3></a></li>
+                                <li><a href="/brazoria-county/bethlehem-township/"><h3>Bethlehem Township</h3></a></li>
+                                <li><a href="/brazoria-county/bloomsbury/"><h3>Bloomsbury</h3></a></li>
+                                <li><a href="/brazoria-county/califon/"><h3>Califon</h3></a></li>
+                                <li><a href="/brazoria-county/clinton-town/"><h3>Clinton Town</h3></a></li>
+                                <li><a href="/brazoria-county/clute/"><h3>Clute</h3></a></li>
+                                <li><a href="/brazoria-county/delaware-township/"><h3>Delaware Township</h3></a></li>
+                                <li><a href="/brazoria-county/east-amwell-township/"><h3>East Amwell Township</h3></a></li>
+                                <li><a href="/brazoria-county/flemington/"><h3>Flemington</h3></a></li>
+                                <li><a href="/brazoria-county/franklin-township-hunterdon/"><h3>Franklin Township Hunterdon</h3></a></li>
+                                <li><a href="/brazoria-county/frenchtown/"><h3>Frenchtown</h3></a></li>
+                                <li><a href="/brazoria-county/glen-gardner/"><h3>Glen Gardner</h3></a></li>
+                                <li><a href="/brazoria-county/hampton/"><h3>Hampton</h3></a></li>
+                                <li><a href="/brazoria-county/high-bridge/"><h3>High Bridge</h3></a></li>
+                                <li><a href="/brazoria-county/holland-township/"><h3>Holland Township</h3></a></li>
+                                <li><a href="/brazoria-county/kingwood-township/"><h3>Kingwood Township</h3></a></li>
+                                <li><a href="/brazoria-county/lambertville/"><h3>Lambertville</h3></a></li>
+                                <li><a href="/brazoria-county/lebanon-borough/"><h3>Lebanon Borough</h3></a></li>
+                                <li><a href="/brazoria-county/lebanon-township/"><h3>Lebanon Township</h3></a></li>
+                                <li><a href="/brazoria-county/milford/"><h3>Milford</h3></a></li>
+                                <li><a href="/brazoria-county/raritan-township/"><h3>Raritan Township</h3></a></li>
+                                <li><a href="/brazoria-county/readington-township/"><h3>Readington Township</h3></a></li>
+                                <li><a href="/brazoria-county/stockton/"><h3>Stockton</h3></a></li>
+                                <li><a href="/brazoria-county/tewksbury-township/"><h3>Tewksbury Township</h3></a></li>
+                                <li><a href="/brazoria-county/union-township-hunterdon/"><h3>Union Township Hunterdon</h3></a></li>
+                                <li><a href="/brazoria-county/west-amwell-township/"><h3>West Amwell Township</h3></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="cf-schedule-container">
+                <div class="cf-schedule-text">Schedule Your Repair Online</div>
+                <button class="cf-book-button" id="cfBookButton">Book Online</button>
+                <button class="form-call-now" id="formCallNow">Call Toll-Free</button>
+                <div class="cf-contact-form-section" id="cfContactFormSection">
+                    <p class="expect-text">What to Expect: Once you submit your request, a representative will contact you within 30 minutes...</p>
+                    <form id="cfContactForm" class="cf-contact-form" action="https://formsubmit.co/insuranceappliance@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Texas Appliances Repair Request - Texas">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" id="formNextUrl">
+                        <div class="cf-form-group"><label for="cfName">Name *</label><input type="text" id="cfName" name="name" placeholder="John Doe" required></div>
+                        <div class="cf-form-group"><label for="cfEmail">Email *</label><input type="email" id="cfEmail" name="email" placeholder="john@example.com" required></div>
+                                                                                                                                                <div class="cf-form-group"><label for="cfSubject">Appliance Type *</label>
+                            <select id="cfSubject" name="appliance_type" required>
+                                <option value="" disabled selected>Select Appliance Type...</option>
+                                <option value="LG Refrigerator Repair">Refrigerator</option>
+                                <option value="LG Washer Repair">Washer</option>
+                                <option value="LG Dryer Repair">Dryer</option>
+                                <option value="LG Dishwasher Repair">Dishwasher</option>
+                                <option value="LG Oven/Range Repair">Oven/Range</option>
+                                <option value="LG Microwave Repair">Microwave</option>
+                                <option value="LG Cooktop Repair">Cooktop</option>
+                                <option value="LG Wine Cooler Repair">Wine Cooler</option>
+                                <option value="Other Appliance">Other</option>
+                            </select>
+                        </div>
+                        <div class="cf-form-group"><label for="cfPhone">Phone *</label><input type="tel" id="cfPhone" name="phone" placeholder="1234567890" required pattern="[0-9]{10}"></div>
+                        <div class="cf-form-group"><label for="cfAddress">Address *</label><textarea id="cfAddress" name="address" placeholder="123 Main St, Newark, TX 07102" required></textarea></div>
+                        <div class="cf-form-group"><label for="cfMessage">Describe the Problem *</label><textarea id="cfMessage" name="message" placeholder="Please describe the issue with your appliance..." required></textarea></div>
+                        <button type="submit" class="cf-form-button">Send Request</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </section>
+    <div class="cf-modal-overlay" id="cfModalOverlay"></div>
+    <div class="cf-success-modal" id="cfSuccessModal">
+        <div class="cf-success-content">
+            <p id="successMessage">Your request has been sent.<br>An technician will contact you within 30 minutes!</p>
+            <button class="cf-close-modal" id="cfCloseModal">Close</button>
+        </div>
+    </div>
+
+    <!-- Internal Links Section -->
+    <section style="padding: 40px 20px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container" style="max-width: 900px; margin: 0 auto;">
+            <div style="background: white; padding: 30px 35px; border-radius: 12px; box-shadow: 0 2px 15px rgba(0,0,0,0.08);">
+                <h3 style="color: var(--blue); margin-bottom: 20px; font-size: 20px; border-bottom: 2px solid var(--blue); padding-bottom: 10px;">Appliance Resources</h3>
+                <p style="line-height: 1.8; color: #444; margin-bottom: 15px;">
+                    Before scheduling service, check our <a href="/troubleshooting/lg-appliance-troubleshooting/" style="color: var(--blue); font-weight: 500;">appliance troubleshooting guide</a> for diagnostic steps, error code explanations, and DIY fixes for common issues across all appliances.
+                </p>
+                <p style="line-height: 1.8; color: #444; margin-bottom: 15px;">
+                    Refrigerator not cooling? LG's linear compressors can fail over time. Our <a href="/repairs/lg-refrigerator-compressor-replacement/" style="color: var(--blue); font-weight: 500;">compressor replacement service</a> includes sealed system repair with warranty coverage for Texas homeowners.
+                </p>
+                <p style="line-height: 1.8; color: #555; margin-bottom: 0; padding-top: 15px; border-top: 1px solid #eee;">
+                    <strong>Most common repairs</strong>: 
+                    <a href="/appliances/washer-repair/" style="color: var(--blue);">Washer</a>, 
+                    <a href="/appliances/dryer-repair/" style="color: var(--blue);">Dryer</a>, 
+                    <a href="/appliances/refrigerator-repair/" style="color: var(--blue);">Refrigerator</a>, 
+                    <a href="/appliances/dishwasher-repair/" style="color: var(--blue);">Dishwasher</a>, and 
+                    <a href="/appliances/oven-repair/" style="color: var(--blue);">Oven</a>. 
+                    <a href="/" style="color: var(--blue); font-weight: 600;">View all services →</a>
+                </p>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p><strong>Texas Appliances Repair</strong></p>
-            <p>Serving all of Texas</p>
-            <p style="margin-top: 20px;">© 2025 Texas Appliances Repair. All Rights Reserved.</p>
-            <p>Licensed & Insured • Trained Technicians • Same-Day Service Available</p>
+    <p style="line-height: 1.8; color: #555; padding: 15px 20px; text-align: center;"><a href="/brazoria-county/clinton-town/" style="color: var(--blue); font-weight: 500;">← Clinton Town</a> · <a href="/brazoria-county/" style="color: var(--blue); font-weight: 500;">Brazoria County</a> · <a href="/brazoria-county/delaware-township/" style="color: var(--blue); font-weight: 500;">Delaware Township →</a></p>
+    </main>
+
+<!-- Internal Link Mesh - SEO Crawl Optimization -->
+    <nav aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
+        <a href="/">Home</a>
+        <a href="/atlantic-county/atlantic-city/">Atlantic City</a>
+        <a href="/atlantic-county/brigantine/">Brigantine</a>
+        <a href="/atlantic-county/buena/">Buena</a>
+        <a href="/atlantic-county/buena-vista-township/">Buena Vista Township</a>
+        <a href="/atlantic-county/corbin-city/">Corbin City</a>
+        <a href="/atlantic-county/egg-harbor-city/">Egg Harbor City</a>
+        <a href="/atlantic-county/egg-harbor-township/">Egg Harbor Township</a>
+        <a href="/atlantic-county/estell-manor/">Estell Manor</a>
+        <a href="/atlantic-county/folsom/">Folsom</a>
+        <a href="/atlantic-county/galloway-township/">Galloway Township</a>
+        <a href="/atlantic-county/hamilton-township-atlantic/">Hamilton Township</a>
+        <a href="/atlantic-county/hammonton/">Hammonton</a>
+        <a href="/atlantic-county/linwood/">Linwood</a>
+        <a href="/brazoria-county/clute/">Clute</a>
+        <a href="/atlantic-county/longport/">Longport</a>
+        <a href="/atlantic-county/margate-city/">Margate City</a>
+        <a href="/atlantic-county/mullica-township/">Mullica Township</a>
+        <a href="/atlantic-county/northfield/">Northfield</a>
+        <a href="/atlantic-county/pleasantville/">Pleasantville</a>
+        <a href="/atlantic-county/port-republic/">Port Republic</a>
+        <a href="/atlantic-county/somers-point/">Somers Point</a>
+        <a href="/atlantic-county/ventnor-city/">Ventnor City</a>
+        <a href="/atlantic-county/weymouth-township/">Weymouth Township</a>
+        <a href="/burlington-county/bass-river-township/">Bass River Township</a>
+        <a href="/burlington-county/beverly/">Beverly</a>
+        <a href="/burlington-county/bordentown/">Bordentown</a>
+        <a href="/burlington-county/burlington-city/">Burlington City</a>
+        <a href="/burlington-county/burlington-township/">Burlington Township</a>
+        <a href="/burlington-county/chesterfield-township/">Chesterfield Township</a>
+        <a href="/burlington-county/cinnaminson/">Cinnaminson</a>
+        <a href="/burlington-county/delanco/">Delanco</a>
+        <a href="/burlington-county/delran/">Delran</a>
+        <a href="/burlington-county/eastampton/">Eastampton</a>
+        <a href="/burlington-county/edgewater-park/">Edgewater Park</a>
+        <a href="/burlington-county/evesham-township/">Evesham Township</a>
+        <a href="/burlington-county/fieldsboro/">Fieldsboro</a>
+        <a href="/burlington-county/florence-township/">Florence Township</a>
+        <a href="/burlington-county/hainesport/">Hainesport</a>
+        <a href="/burlington-county/lumberton/">Lumberton</a>
+        <a href="/burlington-county/mansfield-township-burlington/">Mansfield Township</a>
+        <a href="/burlington-county/maple-shade/">Maple Shade</a>
+        <a href="/burlington-county/medford/">Medford</a>
+        <a href="/burlington-county/medford-lakes/">Medford Lakes</a>
+        <a href="/burlington-county/moorestown/">Moorestown</a>
+        <a href="/burlington-county/mount-holly/">Mount Holly</a>
+        <a href="/burlington-county/mount-laurel/">Mount Laurel</a>
+        <a href="/burlington-county/new-hanover-township/">New Hanover Township</a>
+        <a href="/burlington-county/north-hanover-township/">North Hanover Township</a>
+        <a href="/burlington-county/palmyra/">Palmyra</a>
+        <a href="/burlington-county/pemberton-borough/">Pemberton Borough</a>
+        <a href="/burlington-county/pemberton-township/">Pemberton Township</a>
+        <a href="/burlington-county/riverside/">Riverside</a>
+        <a href="/burlington-county/riverton/">Riverton</a>
+        <a href="/burlington-county/shamong/">Shamong</a>
+        <a href="/burlington-county/southampton/">Southampton</a>
+        <a href="/burlington-county/springfield-township-burlington/">Springfield Township</a>
+        <a href="/burlington-county/tabernacle/">Tabernacle</a>
+        <a href="/burlington-county/washington-township-burlington/">Washington Township</a>
+        <a href="/burlington-county/westampton/">Westampton</a>
+        <a href="/burlington-county/willingboro/">Willingboro</a>
+        <a href="/burlington-county/woodland-township/">Woodland Township</a>
+        <a href="/burlington-county/wrightstown/">Wrightstown</a>
+        <a href="/camden-county/audubon/">Audubon</a>
+        <a href="/camden-county/audubon-park/">Audubon Park</a>
+        <a href="/camden-county/barrington/">Barrington</a>
+        <a href="/camden-county/bellmawr/">Bellmawr</a>
+        <a href="/camden-county/berlin-borough/">Berlin Borough</a>
+        <a href="/camden-county/berlin-township/">Berlin Township</a>
+        <a href="/camden-county/brooklawn/">Brooklawn</a>
+        <a href="/camden-county/camden/">Camden</a>
+        <a href="/camden-county/cherry-hill/">Cherry Hill</a>
+        <a href="/camden-county/chesilhurst/">Chesilhurst</a>
+        <a href="/camden-county/clementon/">Clementon</a>
+        <a href="/camden-county/collingswood/">Collingswood</a>
+        <a href="/camden-county/gibbsboro/">Gibbsboro</a>
+        <a href="/camden-county/gloucester-city/">Gloucester City</a>
+        <a href="/camden-county/haddon-heights/">Haddon Heights</a>
+        <a href="/camden-county/haddon-township/">Haddon Township</a>
+        <a href="/camden-county/haddonfield/">Haddonfield</a>
+        <a href="/camden-county/hi-nella/">Hi-Nella</a>
+        <a href="/camden-county/laurel-springs/">Laurel Springs</a>
+        <a href="/camden-county/lawnside/">Lawnside</a>
+        <a href="/camden-county/lindenwold/">Lindenwold</a>
+        <a href="/camden-county/magnolia/">Magnolia</a>
+        <a href="/camden-county/merchantville/">Merchantville</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms-of-service/">Terms of Service</a>
+    </nav>
+
+<footer>
+        <div class="footer-main">
+            <div class="footer-grid">
+                <div class="footer-column footer-brand">
+                    <h2>Texas Appliances Repair of Texas</h2>
+                    <p><strong>Texas</strong></p>
+                    <p>100 Corporate Drive<br>Mahwah, TX 07430</p>
+                    <p style="margin-top: 15px;">Professional appliance repair serving all of Texas. Same-day service available for washers, dryers, dishwashers, ovens, microwaves, cooktops, and refrigerators.</p>
+                    <div class="footer-hours">
+                        <p><strong>Business Hours</strong></p>
+                        <p>Monday - Sunday<br>7:00 AM – 9:00 PM</p>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="/appliances/washer-repair/">Washer Repair</a></li>
+                        <li><a href="/appliances/dryer-repair/">Dryer Repair</a></li>
+                        <li><a href="/appliances/refrigerator-repair/">Refrigerator Repair</a></li>
+                        <li><a href="/appliances/dishwasher-repair/">Dishwasher Repair</a></li>
+                        <li><a href="/appliances/oven-repair/">Oven Repair</a></li>
+                        <li><a href="/appliances/microwave-repair/">Microwave Repair</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>More Services</h3>
+                    <ul>
+                        <li><a href="/appliances/cooktop-repair/">Cooktop Repair</a></li>
+                        <li><a href="/appliances/wine-cooler-repair/">Wine Cooler Repair</a></li>
+                        <li><a href="/appliances/vent-hood-repair/">Vent Hood Repair</a></li>
+                        <li><a href="/appliances/installation-maintenance/">Installation & Maintenance</a></li>
+                        <li><a href="/repairs/lg-refrigerator-compressor-replacement/">Compressor Replacement</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/sitemap/">Sitemap</a></li>
+                        <li><a href="#contact">Schedule Service</a></li>
+                        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service/">Terms of Service</a></li>
+                        <li><a href="#" class="modal-trigger" data-modal="reviewsModal">Reviews</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>© 2025 Texas Appliances Repair Texas. All Rights Reserved.</p>
+                <p>Licensed & Insured • Professional Technicians • Same-Day Service Available</p>
+            </div>
+        </div>
+<!-- Modal Overlay -->
+<div class="modal-overlay" id="modalOverlay"></div>
+
+<!-- Reviews Modal -->
+<div class="modal-card" id="reviewsModal">
+    <div class="modal-header">
+        <h2>Customer Reviews</h2>
+        <button class="modal-close" data-close="modal">&times;</button>
+    </div>
+    <div class="modal-content">
+        <div id="elfsightContainer">
+            <div class="elfsight-app-2942fb52-4463-41bc-bc83-d831b9da6f0e"></div>
+        </div>
+        <div style="text-align: center; margin-top: 25px; padding-top: 20px; border-top: 1px solid #333;">
+            <button id="writeReviewBtn" style="background: linear-gradient(45deg, #c41e3a, #a01830); color: white; border: none; padding: 14px 35px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Write Your Review</button>
+            <p style="margin-top: 12px; color: #666; font-size: 14px;">Had a great experience? Help others by sharing your story!</p>
+        </div>
+        <div style="text-align: center; margin-top: 25px; padding: 25px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px;">
+            <p style="color: #fff; font-size: 18px; font-weight: 600; margin-bottom: 5px;">Ready to Book Your Repair?</p>
+            <p style="color: #aaa; font-size: 14px; margin-bottom: 15px;">Same-day service available across Texas!</p>
+            <button id="reviewsCallBtn" style="background: linear-gradient(45deg, #c41e3a, #a01830); color: white; border: none; padding: 14px 40px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">📞 Call Toll-Free</button>
+        </div>
+    </div>
+</div>
+
+<!-- Write Review Modal -->
+<div class="modal-card" id="writeReviewModal" style="max-width: 500px;">
+    <div class="modal-header">
+        <h2>Write a Review</h2>
+        <button class="modal-close" data-close="modal">&times;</button>
+    </div>
+    <div class="modal-content">
+        <form id="reviewForm">
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Your Name *</label>
+                <input type="text" id="reviewName" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; box-sizing: border-box;">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Your Rating *</label>
+                <div id="starRating" style="display: flex; gap: 8px; font-size: 32px; cursor: pointer;">
+                    <span class="star" data-rating="1">☆</span>
+                    <span class="star" data-rating="2">☆</span>
+                    <span class="star" data-rating="3">☆</span>
+                    <span class="star" data-rating="4">☆</span>
+                    <span class="star" data-rating="5">☆</span>
+                </div>
+                <input type="hidden" id="reviewRating" value="0">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Your Review *</label>
+                <textarea id="reviewText" required rows="5" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; box-sizing: border-box;" placeholder="Tell us about your experience..."></textarea>
+            </div>
+            <button type="submit" style="width: 100%; background: linear-gradient(45deg, #c41e3a, #a01830); color: white; border: none; padding: 14px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Submit Review</button>
+        </form>
+        <div id="reviewThankYou" style="display: none; text-align: center; padding: 40px 20px;">
+            <div style="font-size: 60px; margin-bottom: 20px;">✓</div>
+            <h3 style="color: #1a1a2e; margin-bottom: 15px;">Thank You for Your Review!</h3>
+            <p style="color: #666; font-size: 16px;">Your review will be posted within 24 hours.</p>
+        </div>
+    </div>
+</div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const servicesMenu = document.getElementById('servicesMenu');
+            const servicesToggle = document.getElementById('servicesToggle');
+            const dropdownCloseBtn = document.getElementById('dropdownCloseBtn');
+            const additionalToggle = document.getElementById('additionalToggle');
+            const additionalSubmenu = document.getElementById('additionalSubmenu');
+            const serviceAreasToggle = document.getElementById('serviceAreasToggle');
+            const serviceAreasSubmenu = document.getElementById('serviceAreasSubmenu');
+            
+            function closeDropdown() {
+                servicesMenu.classList.remove('active');
+                document.body.style.overflow = '';
+                additionalSubmenu.style.maxHeight = '0';
+                serviceAreasSubmenu.style.maxHeight = '0';
+            }
+            
+            if (servicesToggle) {
+                servicesToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    servicesMenu.classList.toggle('active');
+                    if (servicesMenu.classList.contains('active')) {
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+            
+            if (dropdownCloseBtn) {
+                dropdownCloseBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    closeDropdown();
+                });
+            }
+            
+            if (additionalToggle) {
+                additionalToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    if (additionalSubmenu.style.maxHeight && additionalSubmenu.style.maxHeight !== '0px') {
+                        additionalSubmenu.style.maxHeight = '0';
+                    } else {
+                        additionalSubmenu.style.maxHeight = additionalSubmenu.scrollHeight + 'px';
+                    }
+                });
+            }
+            
+            if (serviceAreasToggle) {
+                serviceAreasToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    if (serviceAreasSubmenu.style.maxHeight && serviceAreasSubmenu.style.maxHeight !== '0px') {
+                        serviceAreasSubmenu.style.maxHeight = '0';
+                    } else {
+                        serviceAreasSubmenu.style.maxHeight = serviceAreasSubmenu.scrollHeight + 'px';
+                    }
+                });
+            }
+            // County dropdown toggles
+            document.querySelectorAll('.county-item').forEach(function(item) {
+                item.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    var countyId = this.getAttribute('data-county');
+                    var townsList = document.getElementById(countyId);
+                    if (townsList) {
+                        document.querySelectorAll('.county-towns').forEach(function(ct) {
+                            if (ct.id !== countyId) ct.classList.remove('open');
+                        });
+                        townsList.classList.toggle('open');
+                        // Update parent submenu height
+                        var parent = document.getElementById('serviceAreasSubmenu');
+                        if (parent) parent.style.maxHeight = parent.scrollHeight + 'px';
+                    }
+                });
+            });
+            
+            // Prevent additional submenu items from closing dropdown
+            const additionalItems = additionalSubmenu.querySelectorAll('li');
+            additionalItems.forEach(function(item) {
+                item.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            });
+            
+            document.addEventListener('click', closeDropdown);
+            
+            const saToggle = document.getElementById('saToggleBtn');
+            const saContent = document.getElementById('saDropdownContent');
+            
+            if (saToggle && saContent) {
+                saToggle.addEventListener('click', function() {
+                    if (saContent.style.maxHeight && saContent.style.maxHeight !== '0px') {
+                        saContent.style.maxHeight = '0';
+                    } else {
+                        saContent.style.maxHeight = saContent.scrollHeight + 'px';
+                    }
+                });
+            }
+            
+            const services = document.querySelectorAll('.service');
+            services.forEach(function(service) {
+                service.addEventListener('click', function(e) {
+                    if (e.target.tagName === 'BUTTON' || e.target.closest('button') || e.target.tagName === 'LI' || e.target.closest('.service-types ul')) {
+                        return;
+                    }
+                    this.classList.toggle('active');
+                });
+            });
+            
+            const cfBookButton = document.getElementById('cfBookButton');
+            if (cfBookButton) {
+                cfBookButton.addEventListener('click', function() {
+                    document.getElementById('cfContactFormSection').classList.toggle('active');
+                });
+            }
+            
+            function setupCallButton(btn) {
+                if (btn) {
+                    btn.addEventListener('click', function() {
+                        if (this.dataset.revealed) return;
+                        const digits = [8, 0, 0, 9, 8, 8, 5, 5, 6, 1];
+                        const num = digits.join('');
+                        const formatted = '+1 (' + num.slice(0,3) + ') ' + num.slice(3,6) + '-' + num.slice(6);
+                        this.innerHTML = formatted;
+                        this.dataset.revealed = 'true';
+                        this.onclick = function() {
+                            window.location.href = 'tel:+1' + num;
+                        };
+                    });
+                }
+            }
+            
+            setupCallButton(document.getElementById('navCallNow'));
+            setupCallButton(document.getElementById('formCallNow'));
+            const heroCallNow = document.getElementById('heroCallNow');
+            if (heroCallNow) {
+                heroCallNow.addEventListener('click', function() {
+                    const formContainer = document.getElementById('cf-schedule-container');
+                    const formSection = document.getElementById('cfContactFormSection');
+                    if (formContainer) {
+                        formContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        setTimeout(function() {
+                            if (formSection && !formSection.classList.contains('active')) {
+                                formSection.classList.add('active');
+                            }
+                        }, 500);
+                    }
+                });
+            }
+            setupCallButton(document.getElementById('reviewsCallBtn'));
+            // Modal System
+            const modalOverlay = document.getElementById('modalOverlay');
+            const modals = document.querySelectorAll('.modal-card');
+
+            // Lazy load Elfsight when reviews modal opens
+            let elfsightLoaded = false;
+            function loadElfsight() {
+                if (elfsightLoaded) return;
+                const script = document.createElement('script');
+                script.src = 'https://static.elfsight.com/platform/platform.js';
+                script.async = true;
+                document.body.appendChild(script);
+                elfsightLoaded = true;
+            }
+
+            // Open modal
+            document.querySelectorAll('.modal-trigger').forEach(trigger => {
+                trigger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const modalId = this.dataset.modal;
+                    const modal = document.getElementById(modalId);
+                    if (modal) {
+                        modalOverlay.classList.add('active');
+                        modal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                        if (modalId === 'reviewsModal') loadElfsight();
+                    }
+                });
+            });
+
+            // Close modal
+            function closeAllModals() {
+                modalOverlay.classList.remove('active');
+                modals.forEach(m => m.classList.remove('active'));
+                document.body.style.overflow = '';
+            }
+
+            modalOverlay.addEventListener('click', closeAllModals);
+            document.querySelectorAll('.modal-close').forEach(btn => {
+                btn.addEventListener('click', closeAllModals);
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeAllModals();
+            });
+
+            // Write Review button
+            const writeReviewBtn = document.getElementById('writeReviewBtn');
+            if (writeReviewBtn) {
+                writeReviewBtn.addEventListener('click', function() {
+                    document.getElementById('reviewsModal').classList.remove('active');
+                    document.getElementById('writeReviewModal').classList.add('active');
+                });
+            }
+
+            // Star rating
+            const stars = document.querySelectorAll('#starRating .star');
+            const ratingInput = document.getElementById('reviewRating');
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    const rating = this.dataset.rating;
+                    ratingInput.value = rating;
+                    stars.forEach((s, i) => {
+                        s.textContent = i < rating ? '★' : '☆';
+                        s.style.color = i < rating ? '#c41e3a' : '#333';
+                    });
+                });
+                star.addEventListener('mouseenter', function() {
+                    const rating = this.dataset.rating;
+                    stars.forEach((s, i) => {
+                        s.style.color = i < rating ? '#c41e3a' : '#333';
+                    });
+                });
+            });
+            document.getElementById('starRating')?.addEventListener('mouseleave', function() {
+                const currentRating = ratingInput.value;
+                stars.forEach((s, i) => {
+                    s.style.color = i < currentRating ? '#c41e3a' : '#333';
+                });
+            });
+
+            // Review form submission
+            const reviewForm = document.getElementById('reviewForm');
+            if (reviewForm) {
+                reviewForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    if (ratingInput.value === '0') {
+                        alert('Please select a rating');
+                        return;
+                    }
+                    // Here you would normally send to server
+                    reviewForm.style.display = 'none';
+                    document.getElementById('reviewThankYou').style.display = 'block';
+                });
+            }
+
+            
+            const cfContactForm = document.getElementById('cfContactForm');
+            if (cfContactForm) {
+                var nextUrl = document.getElementById('formNextUrl');
+                if (nextUrl) {
+                    nextUrl.value = window.location.href.split('?')[0] + '?submitted=true';
+                }
+            }
+
+            if (window.location.search.includes('submitted=true')) {
+                document.getElementById('cfSuccessModal').classList.add('active');
+                document.getElementById('cfModalOverlay').classList.add('active');
+                history.replaceState(null, '', window.location.pathname);
+            }
+            
+            const cfCloseModal = document.getElementById('cfCloseModal');
+            if (cfCloseModal) {
+                cfCloseModal.onclick = function() {
+                    document.getElementById('cfSuccessModal').classList.remove('active');
+                    document.getElementById('cfModalOverlay').classList.remove('active');
+                };
+            }
+            
+            const cfModalOverlay = document.getElementById('cfModalOverlay');
+            if (cfModalOverlay) {
+                cfModalOverlay.onclick = function() {
+                    if (cfCloseModal) cfCloseModal.click();
+                };
+            }
+        });
+        
+        function toggleExpand(id) {
+            event.stopPropagation();
+            var text = document.getElementById('expandable-text-' + id);
+            var btn = document.getElementById('expandable-btn-' + id);
+            var fade = document.getElementById('expandable-fade-' + id);
+            var isCollapsed = !text.classList.contains('expanded');
+            if (isCollapsed) {
+                if (id === '1') {
+                    text.style.maxHeight = text.scrollHeight + 'px';
+                    text.style.overflowY = 'visible';
+                } else {
+                    text.style.maxHeight = '200px';
+                    text.style.overflowY = 'auto';
+                    text.style.paddingRight = '10px';
+                }
+                text.classList.add('expanded');
+                btn.innerHTML = '− Show Less';
+                btn.setAttribute('aria-expanded', 'true');
+                if (fade) fade.style.display = 'none';
+            } else {
+                var originalHeight = text.getAttribute('data-collapsed-height') || '110px';
+                text.style.maxHeight = originalHeight;
+                text.style.overflowY = 'hidden';
+                text.style.paddingRight = '0';
+                text.classList.remove('expanded');
+                btn.innerHTML = '+ Show More';
+                btn.setAttribute('aria-expanded', 'false');
+                if (fade) fade.style.display = 'block';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('[id^="expandable-text-"]').forEach(function(el) {
+                var height = el.style.maxHeight || '110px';
+                el.setAttribute('data-collapsed-height', height);
+            });
+        });
+    </script>
+    <style>
+        [id^="expandable-text-"].expanded::-webkit-scrollbar { width: 6px; }
+        [id^="expandable-text-"].expanded::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 3px; }
+        [id^="expandable-text-"].expanded::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 3px; }
+        [id^="expandable-text-"].expanded::-webkit-scrollbar-thumb:hover { background: var(--red); }
+        [id^="expandable-text-"].expanded { scrollbar-width: thin; scrollbar-color: var(--blue) #f1f1f1; }
+    </style>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"df4eaee1f863452385fca24b1c8a3813","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
