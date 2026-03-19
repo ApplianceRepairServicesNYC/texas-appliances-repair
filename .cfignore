@@ -1,0 +1,14 @@
+.git
+.git/**
+.github
+.github/**
+.wrangler
+.wrangler/**
+*.py
+*.md
+*.sh
+*.lock
+deploy.sh
+RESUME-STATUS.md
+update_site.py
+update_for_lead_company.py
